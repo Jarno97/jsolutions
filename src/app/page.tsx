@@ -169,7 +169,6 @@ export default function Home() {
       <footer className="py-8 md:py-12 px-4 md:px-6 bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 text-center md:text-left">
           <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
-          <p className="text-zinc-600 dark:text-zinc-400">
             © {new Date().getFullYear()} JSolutions. All rights reserved.
           </p>
           <div className="flex gap-6">
