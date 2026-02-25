@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const services = [
   {
@@ -32,7 +33,7 @@ export default function Home() {
             JSolutions
           </a>
           {/* Desktop nav */}
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-8 items-center">
             <a href="#about" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               About
             </a>
@@ -42,9 +43,11 @@ export default function Home() {
             <a href="#contact" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               Contact
             </a>
+            <ThemeToggle />
           </div>
           {/* Mobile nav - simple version */}
-          <div className="flex md:hidden gap-4">
+          <div className="flex md:hidden gap-2 items-center">
+            <ThemeToggle />
             <a href="#contact" className="text-sm px-3 py-2 bg-black dark:bg-white text-white dark:text-black font-medium rounded-full">
               Contact
             </a>

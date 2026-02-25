@@ -1,15 +1,15 @@
 # JSolutions Website - Progress
 
 ## Current Task
-Planning website structure with Jarno
+Building services section
 
 ## Completed
 - Cloned repo
 - Explored existing setup (Next.js 16 + Tailwind v4)
-
-## Upcoming
-- Plan website structure with Jarno
-- Start building pages/sections
+- Homepage hero section
+- Services section
+- Footer
+- Dark/Light mode toggle
 
 ---
 
