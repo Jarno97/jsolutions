@@ -142,6 +142,9 @@ export default function Home() {
             <h2 className="text-2xl md:text-4xl font-bold text-center text-black dark:text-white mb-8 md:mb-16">
               What I do
             </h2>
+            <p className="text-center text-zinc-600 dark:text-zinc-400 mb-12 md:mb-16 max-w-xl mx-auto">
+              To make you do less.
+            </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {services.map((service, index) => (
