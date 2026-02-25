@@ -38,7 +38,7 @@ export default function HowItWorks() {
             From idea to impact
           </h2>
           <p className="text-center text-zinc-600 dark:text-zinc-400 mb-12 md:mb-16 max-w-xl mx-auto">
-            From idea to working solution in four steps.
+            Simple process, powerful results.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
