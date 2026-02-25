@@ -8,6 +8,7 @@ import HowItWorks from "@/components/HowItWorks";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/components/LanguageContext";
 import Contact from "@/components/Contact";
+import Testimonials from "@/components/Testimonials";
 
 const services = [
   {
@@ -60,6 +61,9 @@ export default function Home() {
             </a>
             <a href="#how-it-works" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               {t("How it works", "Hoe het werkt")}
+            </a>
+            <a href="#testimonials" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+              {t("Testimonials", "Referenties")}
             </a>
             <a href="#projects" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               {t("Projects", "Projecten")}
@@ -187,6 +191,9 @@ export default function Home() {
 
       {/* How It Works Section */}
       <HowItWorks />
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Projects Section */}
       <Projects />
