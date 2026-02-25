@@ -79,6 +79,31 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-zinc-600 dark:text-zinc-400">
+            © {new Date().getFullYear()} JSolutions. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <a
+              href="mailto:hello@jsolutions.nl"
+              className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+            >
+              hello@jsolutions.nl
+            </a>
+            <a
+              href="https://github.com/Jarno97"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
