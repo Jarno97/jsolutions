@@ -25,13 +25,28 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center min-h-[80vh] px-6 py-24 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-black dark:text-white max-w-4xl mb-6">
-          AI Agents & Automations that work for you
-        </h1>
-        <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-12">
-          Smart solutions that handle the repetitive stuff so you can focus on what matters.
-        </p>
+      <section className="flex flex-col items-center justify-center min-h-[80vh] px-6 py-24 text-center relative overflow-hidden">
+        {/* Abstract background SVG */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-30 dark:opacity-20 pointer-events-none">
+          <svg viewBox="0 0 400 400" className="w-[600px] h-[600px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="150" stroke="currentColor" strokeWidth="1" className="text-zinc-400" />
+            <circle cx="200" cy="200" r="100" stroke="currentColor" strokeWidth="1" className="text-zinc-500" />
+            <circle cx="200" cy="200" r="50" stroke="currentColor" strokeWidth="1" className="text-zinc-600" />
+            <circle cx="200" cy="200" r="10" fill="currentColor" className="text-black dark:text-white" />
+            <line x1="200" y1="50" x2="200" y2="350" stroke="currentColor" strokeWidth="1" className="text-zinc-300" />
+            <line x1="50" y1="200" x2="350" y2="200" stroke="currentColor" strokeWidth="1" className="text-zinc-300" />
+            <line x1="100" y1="100" x2="300" y2="300" stroke="currentColor" strokeWidth="1" className="text-zinc-300" />
+            <line x1="300" y1="100" x2="100" y2="300" stroke="currentColor" strokeWidth="1" className="text-zinc-300" />
+          </svg>
+        </div>
+
+        <div className="relative z-10">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-black dark:text-white max-w-4xl mb-6">
+            AI Agents & Automations that work for you
+          </h1>
+          <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-12">
+            Smart solutions that handle the repetitive stuff so you can focus on what matters.
+          </p>
 
         {/* Services */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -52,6 +67,7 @@ export default function Home() {
         >
           Get in touch
         </a>
+        </div>
       </section>
 
       {/* About Section */}
