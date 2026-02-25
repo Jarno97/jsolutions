@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import HowItWorks from "@/components/HowItWorks";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/components/LanguageContext";
+import Contact from "@/components/Contact";
 
 const services = [
   {
@@ -191,24 +192,7 @@ export default function Home() {
       <Projects />
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 md:py-24 px-4 md:px-6 bg-zinc-50 dark:bg-black">
-        <FadeIn>
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white mb-4 md:mb-6">
-              {t("Let's work together", "Laten we samenwerken")}
-            </h2>
-            <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 mb-6 md:mb-8">
-              {t("Have a project in mind? I'd love to hear about it.", "Heb je een project in gedachten? Ik hoor graag wat je wilt maken.")}
-            </p>
-            <a
-              href="mailto:hello@jsolutions.nl"
-              className="text-base md:text-2xl font-medium text-black dark:text-white hover:underline underline-offset-4"
-            >
-              hello@jsolutions.nl
-            </a>
-          </div>
-        </FadeIn>
-      </section>
+      <Contact />
 
       {/* Footer */}
       <footer className="py-8 md:py-12 px-4 md:px-6 bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
