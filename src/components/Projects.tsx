@@ -1,17 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "./LanguageContext";
 
 interface Project {
   title: string;
+  titleNl: string;
   description: string;
+  descriptionNl: string;
   before: {
     time: string;
+    timeNl: string;
     steps: number;
     manual: boolean;
   };
   after: {
     time: string;
+    timeNl: string;
     steps: number;
     manual: boolean;
   };
@@ -21,14 +26,18 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Invoice Processing",
+    titleNl: "Factuurverwerking",
     description: "Automated extraction and entry for accounting firm",
+    descriptionNl: "Geautomatiseerde extractie en invoer voor administratiekantoor",
     before: {
       time: "5 hours",
+      timeNl: "5 uur",
       steps: 12,
       manual: true,
     },
     after: {
       time: "2 minutes",
+      timeNl: "2 minuten",
       steps: 1,
       manual: false,
     },
@@ -36,14 +45,18 @@ const projects: Project[] = [
   },
   {
     title: "Customer Support",
+    titleNl: "Klantenservice",
     description: "AI triage handling 80% of inquiries automatically",
+    descriptionNl: "AI triage die 80% van vragen automatisch afhandelt",
     before: {
       time: "24 hrs response",
+      timeNl: "24 uur reactie",
       steps: 5,
       manual: true,
     },
     after: {
       time: "Instant",
+      timeNl: "Direct",
       steps: 1,
       manual: false,
     },
@@ -51,14 +64,18 @@ const projects: Project[] = [
   },
   {
     title: "Data Synchronization",
+    titleNl: "Datasynchronisatie",
     description: "Real-time sync between CRM and marketing tools",
+    descriptionNl: "Real-time synchronisatie tussen CRM en marketing tools",
     before: {
       time: "Weekly manual",
+      timeNl: "Wekelijks handmatig",
       steps: 8,
       manual: true,
     },
     after: {
       time: "Real-time",
+      timeNl: "Real-time",
       steps: 0,
       manual: false,
     },
@@ -97,16 +114,17 @@ function MetricBox({
 
 export default function Projects() {
   const [expanded, setExpanded] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   return (
     <section id="projects" className="py-16 md:py-24 px-4 md:px-6">
       <FadeIn>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-4xl font-bold text-center text-black dark:text-white mb-4 md:mb-6">
-            Results that speak
+            {t("Results that speak", "Resultaten die spreken")}
           </h2>
           <p className="text-center text-zinc-600 dark:text-zinc-400 mb-12 md:mb-16 max-w-xl mx-auto">
-            Real problems, real solutions. See what automation can do.
+            {t("Real problems, real solutions. See what automation can do.", "Echte problemen, echte oplossingen. Zie wat automatisering kan doen.")}
           </p>
 
           <div className="grid gap-8">
@@ -118,10 +136,10 @@ export default function Projects() {
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div>
                         <h3 className="text-xl font-semibold text-black dark:text-white">
-                          {project.title}
+                          {t(project.title, project.titleNl)}
                         </h3>
                         <p className="text-zinc-600 dark:text-zinc-400 mt-1">
-                          {project.description}
+                          {t(project.description, project.descriptionNl)}
                         </p>
                       </div>
                       <div className="flex flex-wrap gap-2">
@@ -146,14 +164,14 @@ export default function Projects() {
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          Before
+                          {t("Before", "Voor")}
                         </div>
                         <div className="grid grid-cols-2 gap-3">
-                          <MetricBox label="Time spent" value={project.before.time} isAfter={false} />
-                          <MetricBox label="Steps" value={project.before.steps} isAfter={false} />
+                          <MetricBox label={t("Time spent", "Tijd besteed")} value={t(project.before.time, project.before.timeNl)} isAfter={false} />
+                          <MetricBox label={t("Steps", "Stappen")} value={project.before.steps} isAfter={false} />
                         </div>
                         <div className="text-sm text-zinc-500 dark:text-zinc-400">
-                          {project.before.manual ? "✋ Manual process" : "⚡ Semi-automated"}
+                          {project.before.manual ? t("✋ Manual process", "✋ Handmatig proces") : t("⚡ Semi-automated", "⚡ Semi-geautomatiseerd")}
                         </div>
                       </div>
 
@@ -172,14 +190,14 @@ export default function Projects() {
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          After
+                          {t("After", "Na")}
                         </div>
                         <div className="grid grid-cols-2 gap-3">
-                          <MetricBox label="Time spent" value={project.after.time} isAfter={true} />
-                          <MetricBox label="Steps" value={project.after.steps} isAfter={true} />
+                          <MetricBox label={t("Time spent", "Tijd besteed")} value={t(project.after.time, project.after.timeNl)} isAfter={true} />
+                          <MetricBox label={t("Steps", "Stappen")} value={project.after.steps} isAfter={true} />
                         </div>
                         <div className="text-sm text-zinc-500 dark:text-zinc-400">
-                          {project.after.manual ? "✋ Manual process" : "⚡ Fully automated"}
+                          {project.after.manual ? t("✋ Manual process", "✋ Handmatig proces") : t("⚡ Fully automated", "⚡ Volledig geautomatiseerd")}
                         </div>
                       </div>
                     </div>

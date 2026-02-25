@@ -1,31 +1,46 @@
+"use client";
+
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import ThemeToggle from "@/components/ThemeToggle";
 import Projects from "@/components/Projects";
 import HowItWorks from "@/components/HowItWorks";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/components/LanguageContext";
 
 const services = [
   {
     icon: "🤖",
     title: "AI Agents",
+    titleNl: "AI Agents",
     description:
       "Intelligent assistants that handle complex tasks autonomously. From customer support to data processing, our agents learn and adapt to your workflows.",
+    descriptionNl:
+      "Intelligente assistenten die complexe taken autonoom uitvoeren. Van klantenservice tot dataverwerking, onze agents leren en passen zich aan jouw workflow aan.",
   },
   {
     icon: "⚡",
     title: "Automations",
+    titleNl: "Automatisering",
     description:
       "Eliminate repetitive tasks with custom automation pipelines. We connect your tools and streamline processes so you can focus on high-value work.",
+    descriptionNl:
+      "Elimineer repetitieve taken met aangepaste automatisering. We verbinden je tools en stroomlijnen processen zodat jij je kunt richten op waardevol werk.",
   },
   {
     icon: "💬",
     title: "Chatbots",
+    titleNl: "Chatbots",
     description:
       "Conversational AI that actually understands. Natural language interfaces for websites, apps, or internal tools that engage users effectively.",
+    descriptionNl:
+      "Conversationele AI die echt begrijpt. Natural language interfaces voor websites, apps of interne tools die gebruikers effectief betrekken.",
   },
 ];
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
       {/* Header */}
@@ -35,29 +50,31 @@ export default function Home() {
             JSolutions
           </a>
           {/* Desktop nav */}
-          <div className="hidden md:flex gap-8 items-center">
+          <div className="hidden md:flex gap-4 items-center">
             <a href="#about" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
-              About
+              {t("About", "Over")}
             </a>
             <a href="#services" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
-              Services
+              {t("Services", "Diensten")}
             </a>
             <a href="#how-it-works" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
-              How it works
+              {t("How it works", "Hoe het werkt")}
             </a>
             <a href="#projects" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
-              Projects
+              {t("Projects", "Projecten")}
             </a>
             <a href="#contact" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
-              Contact
+              {t("Contact", "Contact")}
             </a>
+            <LanguageToggle />
             <ThemeToggle />
           </div>
           {/* Mobile nav - simple version */}
           <div className="flex md:hidden gap-2 items-center">
+            <LanguageToggle />
             <ThemeToggle />
             <a href="#contact" className="text-sm px-3 py-2 bg-black dark:bg-white text-white dark:text-black font-medium rounded-full">
-              Contact
+              {t("Contact", "Contact")}
             </a>
           </div>
         </nav>
@@ -79,22 +96,22 @@ export default function Home() {
 
         <div className="relative z-10 px-4">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white max-w-4xl mb-4 md:mb-6">
-            AI Agents & Automations that work for you
+            {t("AI Agents & Automations that work for you", "AI Agents & Automatisering die voor je werken")}
           </h1>
           <p className="text-base sm:text-lg md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8 md:mb-12">
-            Smart solutions that handle the repetitive stuff so you can focus on what matters.
+            {t("Smart solutions that handle the repetitive stuff so you can focus on what matters.", "Slimme oplossingen die het repetitieve werk doen, zodat jij je kunt richten op wat belangrijk is.")}
           </p>
 
         {/* Services */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 md:mb-12 px-4">
           <span className="px-4 sm:px-6 py-2 sm:py-3 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm sm:text-base text-zinc-700 dark:text-zinc-300 font-medium">
-            🤖 AI Agents
+            🤖 {t("AI Agents", "AI Agents")}
           </span>
           <span className="px-4 sm:px-6 py-2 sm:py-3 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm sm:text-base text-zinc-700 dark:text-zinc-300 font-medium">
-            ⚡ Automations
+            ⚡ {t("Automations", "Automatisering")}
           </span>
           <span className="px-4 sm:px-6 py-2 sm:py-3 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm sm:text-base text-zinc-700 dark:text-zinc-300 font-medium">
-            💬 Chatbots
+            💬 {t("Chatbots", "Chatbots")}
           </span>
         </div>
 
@@ -102,7 +119,7 @@ export default function Home() {
           href="#contact"
           className="px-6 py-3 md:px-8 md:py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:opacity-80 transition-opacity text-sm md:text-base"
         >
-          Get in touch
+          {t("Get in touch", "Neem contact op")}
         </a>
         </div>
       </section>
@@ -112,24 +129,24 @@ export default function Home() {
         <FadeIn>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white mb-8 md:mb-12">
-              About me
+              {t("About me", "Over mij")}
             </h2>
             <div className="space-y-4 md:space-y-6 text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
               <p>
-                <span className="text-black dark:text-white font-semibold">Hi, I'm Jarno Swinkels.</span> Years of experience as a software engineer, now focused on automation & AI.
+                <span className="text-black dark:text-white font-semibold">{t("Hi, I'm Jarno Swinkels.", "Hoi, ik ben Jarno Swinkels.")}</span> {t("Years of experience as a software engineer, now focused on automation & AI.", "Jaren ervaring als software engineer, nu gericht op automatisering & AI.")}
               </p>
               <p>
-                I've always believed AI should handle the boring stuff — so why not help others do the same?
+                {t("I've always believed AI should handle the boring stuff — so why not help others do the same?", "Ik heb altijd gevonden dat AI het saaie werk moet doen — dus waarom anderen niet helpen hetzelfde te doen?")}
               </p>
               <p>
-                Building your product is a collaboration. <span className="text-black dark:text-white font-medium">Communication is my thing.</span> Let's make your life easier.
+                {t("Building your product is a collaboration.", "Je product bouwen is een samenwerking.")} <span className="text-black dark:text-white font-medium">{t("Communication is my thing.", "Communicatie is mijn ding.")}</span> {t("Let's make your life easier.", "Laten we je leven makkelijker maken.")}
               </p>
             </div>
             <a
               href="mailto:hello@jsolutions.nl"
               className="inline-block mt-10 px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white font-semibold rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
             >
-              Get in touch
+              {t("Get in touch", "Neem contact op")}
             </a>
           </div>
         </FadeIn>
@@ -140,10 +157,10 @@ export default function Home() {
         <FadeIn>
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-4xl font-bold text-center text-black dark:text-white mb-8 md:mb-16">
-              What I do
+              {t("What I do", "Wat ik doe")}
             </h2>
             <p className="text-center text-zinc-600 dark:text-zinc-400 mb-12 md:mb-16 max-w-xl mx-auto">
-              So you do less.
+              {t("So you do less.", "Zodat jij minder doet.")}
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -154,10 +171,10 @@ export default function Home() {
                   >
                     <span className="text-4xl mb-4 block">{service.icon}</span>
                     <h3 className="text-xl font-semibold text-black dark:text-white mb-3">
-                      {service.title}
+                      {t(service.title, service.titleNl)}
                     </h3>
                     <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                      {service.description}
+                      {t(service.description, service.descriptionNl)}
                     </p>
                   </div>
                 </FadeIn>
@@ -178,10 +195,10 @@ export default function Home() {
         <FadeIn>
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white mb-4 md:mb-6">
-              Let's work together
+              {t("Let's work together", "Laten we samenwerken")}
             </h2>
             <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 mb-6 md:mb-8">
-              Have a project in mind? I'd love to hear about it.
+              {t("Have a project in mind? I'd love to hear about it.", "Heb je een project in gedachten? Ik hoor graag wat je wilt maken.")}
             </p>
             <a
               href="mailto:hello@jsolutions.nl"
@@ -197,7 +214,7 @@ export default function Home() {
       <footer className="py-8 md:py-12 px-4 md:px-6 bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 text-center md:text-left">
           <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
-            © {new Date().getFullYear()} JSolutions. All rights reserved.
+            © {new Date().getFullYear()} JSolutions. {t("All rights reserved.", "Alle rechten voorbehouden.")}
           </p>
           <div className="flex gap-6">
             <a
