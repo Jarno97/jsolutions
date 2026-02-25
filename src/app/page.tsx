@@ -106,6 +106,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <section id="contact" className="py-24 px-6 bg-zinc-50 dark:bg-black">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
+            Let's work together
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
+            Have a project in mind? I'd love to hear about it.
+          </p>
+          <a
+            href="mailto:hello@jsolutions.nl"
+            className="text-xl md:text-2xl font-medium text-black dark:text-white hover:underline underline-offset-4"
+          >
+            hello@jsolutions.nl
+          </a>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 px-6 bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
