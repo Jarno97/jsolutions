@@ -143,7 +143,7 @@ export default function Home() {
               What I do
             </h2>
             <p className="text-center text-zinc-600 dark:text-zinc-400 mb-12 md:mb-16 max-w-xl mx-auto">
-              To make you do less.
+              So you do less.
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
