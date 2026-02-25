@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FadeIn from "@/components/FadeIn";
 
 const services = [
   {
@@ -97,72 +98,79 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="py-16 md:py-24 px-4 md:px-6 bg-white dark:bg-zinc-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white mb-8 md:mb-12">
-            About me
-          </h2>
-          <div className="space-y-4 md:space-y-6 text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            <p>
-              <span className="text-black dark:text-white font-semibold">Hi, I'm Jarno Swinkels.</span> Years of experience as a software engineer, now focused on automation & AI.
-            </p>
-            <p>
-              I've always believed AI should handle the boring stuff — so why not help others do the same?
-            </p>
-            <p>
-              Building your product is a collaboration. <span className="text-black dark:text-white font-medium">Communication is my thing.</span> Let's make your life easier.
-            </p>
+        <FadeIn>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white mb-8 md:mb-12">
+              About me
+            </h2>
+            <div className="space-y-4 md:space-y-6 text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              <p>
+                <span className="text-black dark:text-white font-semibold">Hi, I'm Jarno Swinkels.</span> Years of experience as a software engineer, now focused on automation & AI.
+              </p>
+              <p>
+                I've always believed AI should handle the boring stuff — so why not help others do the same?
+              </p>
+              <p>
+                Building your product is a collaboration. <span className="text-black dark:text-white font-medium">Communication is my thing.</span> Let's make your life easier.
+              </p>
+            </div>
+            <a
+              href="mailto:hello@jsolutions.nl"
+              className="inline-block mt-10 px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white font-semibold rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+            >
+              Get in touch
+            </a>
           </div>
-          <a
-            href="mailto:hello@jsolutions.nl"
-            className="inline-block mt-10 px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white font-semibold rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-          >
-            Get in touch
-          </a>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Services Section */}
       <section id="services" className="py-16 md:py-24 px-4 md:px-6 bg-white dark:bg-zinc-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-black dark:text-white mb-8 md:mb-16">
-            What I do
-          </h2>
+        <FadeIn>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold text-center text-black dark:text-white mb-8 md:mb-16">
+              What I do
+            </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-800 hover:shadow-lg transition-shadow duration-300"
-              >
-                <span className="text-4xl mb-4 block">{service.icon}</span>
-                <h3 className="text-xl font-semibold text-black dark:text-white mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {services.map((service, index) => (
+                <FadeIn key={index} delay={index * 150}>
+                  <div
+                    className="p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-800 hover:shadow-lg transition-shadow duration-300 h-full"
+                  >
+                    <span className="text-4xl mb-4 block">{service.icon}</span>
+                    <h3 className="text-xl font-semibold text-black dark:text-white mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-16 md:py-24 px-4 md:px-6 bg-zinc-50 dark:bg-black">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white mb-4 md:mb-6">
-            Let's work together
-          </h2>
-          <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 mb-6 md:mb-8">
-            Have a project in mind? I'd love to hear about it.
-          </p>
-          <a
-            href="mailto:hello@jsolutions.nl"
-            className="text-base md:text-2xl font-medium text-black dark:text-white hover:underline underline-offset-4"
-          >
-            hello@jsolutions.nl
-          </a>
-        </div>
+        <FadeIn>
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white mb-4 md:mb-6">
+              Let's work together
+            </h2>
+            <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 mb-6 md:mb-8">
+              Have a project in mind? I'd love to hear about it.
+            </p>
+            <a
+              href="mailto:hello@jsolutions.nl"
+              className="text-base md:text-2xl font-medium text-black dark:text-white hover:underline underline-offset-4"
+            >
+              hello@jsolutions.nl
+            </a>
+          </div>
+        </FadeIn>
       </section>
 
       {/* Footer */}
