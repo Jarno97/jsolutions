@@ -218,10 +218,12 @@ export default function Home() {
           </p>
           <div className="flex gap-6">
             <a
-              href="mailto:hello@jsolutions.nl"
+              href="https://www.linkedin.com/in/jarnoswinkels/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
             >
-              hello@jsolutions.nl
+              LinkedIn
             </a>
             <a
               href="https://github.com/Jarno97"
