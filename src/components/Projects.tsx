@@ -79,13 +79,13 @@ function MetricBox({
     <div
       className={`p-4 rounded-xl text-center ${
         isAfter
-          ? "bg-green-50 dark:bg-green-950/30"
-          : "bg-red-50 dark:bg-red-950/30"
+          ? "bg-emerald-50/50 dark:bg-emerald-950/20"
+          : "bg-amber-50/50 dark:bg-amber-950/20"
       }`}
     >
       <div
         className={`text-2xl font-bold ${
-          isAfter ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"
+          isAfter ? "text-emerald-600 dark:text-emerald-400" : "text-amber-600 dark:text-amber-400"
         }`}
       >
         {value}
@@ -142,7 +142,7 @@ export default function Projects() {
                     <div className="grid md:grid-cols-2 gap-6">
                       {/* Before */}
                       <div className="space-y-4">
-                        <div className="flex items-center gap-2 text-red-600 dark:text-red-400 font-medium">
+                        <div className="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-medium">
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -168,7 +168,7 @@ export default function Projects() {
 
                       {/* After */}
                       <div className="space-y-4 md:col-start-2">
-                        <div className="flex items-center gap-2 text-green-600 dark:text-green-400 font-medium">
+                        <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-medium">
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
