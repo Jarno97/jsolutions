@@ -32,10 +32,10 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200"
             alt="Technology abstract"
             fill
-            className="object-cover opacity-40 dark:opacity-20 grayscale"
+            className="object-cover opacity-30 dark:opacity-15 grayscale"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-50/80 to-zinc-50/80 dark:from-black/80 dark:to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-zinc-50/60 to-zinc-50/60 dark:from-black/60 dark:to-black/60" />
         </div>
 
         <div className="relative z-10">
