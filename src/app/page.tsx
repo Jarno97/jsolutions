@@ -25,19 +25,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center min-h-[80vh] px-6 py-24 text-center relative overflow-hidden">
-        {/* Abstract background SVG */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-30 dark:opacity-20 pointer-events-none">
-          <svg viewBox="0 0 400 400" className="w-[600px] h-[600px]" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="200" cy="200" r="150" stroke="currentColor" strokeWidth="1" className="text-zinc-400" />
-            <circle cx="200" cy="200" r="100" stroke="currentColor" strokeWidth="1" className="text-zinc-500" />
-            <circle cx="200" cy="200" r="50" stroke="currentColor" strokeWidth="1" className="text-zinc-600" />
-            <circle cx="200" cy="200" r="10" fill="currentColor" className="text-black dark:text-white" />
-            <line x1="200" y1="50" x2="200" y2="350" stroke="currentColor" strokeWidth="1" className="text-zinc-300" />
-            <line x1="50" y1="200" x2="350" y2="200" stroke="currentColor" strokeWidth="1" className="text-zinc-300" />
-            <line x1="100" y1="100" x2="300" y2="300" stroke="currentColor" strokeWidth="1" className="text-zinc-300" />
-            <line x1="300" y1="100" x2="100" y2="300" stroke="currentColor" strokeWidth="1" className="text-zinc-300" />
-          </svg>
+      <section className="flex flex-col items-center justify-center min-h-[80vh] px-6 py-24 text-center relative">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200"
+            alt="Technology abstract"
+            fill
+            className="object-cover opacity-40 dark:opacity-20 grayscale"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-zinc-50/80 to-zinc-50/80 dark:from-black/80 dark:to-black/80" />
         </div>
 
         <div className="relative z-10">
