@@ -35,7 +35,7 @@ export default function HowItWorks() {
       <FadeIn>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-4xl font-bold text-center text-black dark:text-white mb-4 md:mb-6">
-            How we work together
+            From idea to impact
           </h2>
           <p className="text-center text-zinc-600 dark:text-zinc-400 mb-12 md:mb-16 max-w-xl mx-auto">
             From idea to working solution in four steps.
