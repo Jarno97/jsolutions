@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode, useRef } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 type Language = "en" | "nl";
 
@@ -8,7 +8,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (en: string, nl: string) => string;
-  isAnimating: boolean;
+  key: number;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -16,25 +16,19 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("nl");
   const [mounted, setMounted] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const prevLang = useRef<Language>("nl");
 
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem("language") as Language;
     if (saved) {
       setLanguage(saved);
-      prevLang.current = saved;
     }
   }, []);
 
   const handleSetLanguage = (lang: Language) => {
     if (lang !== language) {
-      setIsAnimating(true);
-      prevLang.current = language;
       setLanguage(lang);
       localStorage.setItem("language", lang);
-      setTimeout(() => setIsAnimating(false), 300);
     }
   };
 
@@ -47,7 +41,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t, isAnimating }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t, key: language === "en" ? 1 : 0 }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -61,7 +55,7 @@ export function useLanguage() {
       language: "nl" as Language,
       setLanguage: () => {},
       t: (en: string, nl: string) => nl, // Default to Dutch during SSR
-      isAnimating: false,
+      key: 0,
     };
   }
   return context;

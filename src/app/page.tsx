@@ -39,10 +39,10 @@ const services = [
 ];
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, key: langKey } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+    <div key={langKey} className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-50/80 dark:bg-black/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
         <nav className="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
@@ -95,10 +95,10 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white max-w-4xl mb-4 md:mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white max-w-4xl mb-4 md:mb-6 animate-text-slide">
             {t("AI Agents & Automations that work for you", "AI Agents & Automatisering die voor je werken")}
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8 md:mb-12">
+          <p className="text-base sm:text-lg md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8 md:mb-12 animate-text-slide" style={{ animationDelay: "0.1s" }}>
             {t("Smart solutions that handle the repetitive stuff so you can focus on what matters.", "Slimme oplossingen die het repetitieve werk doen, zodat jij je kunt richten op wat belangrijk is.")}
           </p>
 
