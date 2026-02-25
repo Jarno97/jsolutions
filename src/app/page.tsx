@@ -1,5 +1,26 @@
 import Image from "next/image";
 
+const services = [
+  {
+    icon: "🤖",
+    title: "AI Agents",
+    description:
+      "Intelligent assistants that handle complex tasks autonomously. From customer support to data processing, our agents learn and adapt to your workflows.",
+  },
+  {
+    icon: "⚡",
+    title: "Automations",
+    description:
+      "Eliminate repetitive tasks with custom automation pipelines. We connect your tools and streamline processes so you can focus on high-value work.",
+  },
+  {
+    icon: "💬",
+    title: "Chatbots",
+    description:
+      "Conversational AI that actually understands. Natural language interfaces for websites, apps, or internal tools that engage users effectively.",
+  },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
@@ -11,7 +32,7 @@ export default function Home() {
         <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-12">
           Smart solutions that handle the repetitive stuff so you can focus on what matters.
         </p>
-        
+
         {/* Services */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <span className="px-6 py-3 bg-zinc-100 dark:bg-zinc-800 rounded-full text-zinc-700 dark:text-zinc-300 font-medium">
@@ -31,6 +52,32 @@ export default function Home() {
         >
           Get in touch
         </a>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 px-6 bg-white dark:bg-zinc-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-black dark:text-white mb-16">
+            What I do
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-800 hover:shadow-lg transition-shadow duration-300"
+              >
+                <span className="text-4xl mb-4 block">{service.icon}</span>
+                <h3 className="text-xl font-semibold text-black dark:text-white mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
