@@ -54,6 +54,32 @@ export default function Home() {
         </a>
       </section>
 
+      {/* About Section */}
+      <section className="py-24 px-6 bg-white dark:bg-zinc-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-12">
+            About me
+          </h2>
+          <div className="space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p>
+              <span className="text-black dark:text-white font-semibold">Hi, I'm Jarno Swinkels.</span> Years of experience as a software engineer, now focused on automation & AI.
+            </p>
+            <p>
+              I've always believed AI should handle the boring stuff — so why not help others do the same?
+            </p>
+            <p>
+              Building your product is a collaboration. <span className="text-black dark:text-white font-medium">Communication is my thing.</span> Let's make your life easier.
+            </p>
+          </div>
+          <a
+            href="mailto:hello@jsolutions.nl"
+            className="inline-block mt-10 px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white font-semibold rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+          >
+            Get in touch
+          </a>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-24 px-6 bg-white dark:bg-zinc-900">
         <div className="max-w-6xl mx-auto">
