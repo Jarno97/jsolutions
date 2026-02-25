@@ -24,8 +24,28 @@ const services = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-50/80 dark:bg-black/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
+        <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <a href="#" className="text-xl font-bold text-black dark:text-white">
+            JSolutions
+          </a>
+          <div className="flex gap-8">
+            <a href="#about" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+              About
+            </a>
+            <a href="#services" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+              Services
+            </a>
+            <a href="#contact" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+              Contact
+            </a>
+          </div>
+        </nav>
+      </header>
+
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center min-h-[80vh] px-6 py-24 text-center relative">
+      <section className="flex flex-col items-center justify-center min-h-[80vh] px-6 py-24 text-center relative pt-32">
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -69,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-24 px-6 bg-white dark:bg-zinc-900">
+      <section id="about" className="py-24 px-6 bg-white dark:bg-zinc-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-12">
             About me
@@ -95,7 +115,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 px-6 bg-white dark:bg-zinc-900">
+      <section id="services" className="py-24 px-6 bg-white dark:bg-zinc-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-black dark:text-white mb-16">
             What I do
