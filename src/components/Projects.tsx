@@ -63,14 +63,14 @@ const projects: Project[] = [
     tags: ["LLM", "RAG", "Zapier"],
   },
   {
-    title: "Data Synchronization",
-    titleNl: "Datasynchronisatie",
-    description: "Real-time sync between CRM and marketing tools",
-    descriptionNl: "Real-time synchronisatie tussen CRM en marketing tools",
+    title: "Lead Qualification",
+    titleNl: "Lead kwalificatie",
+    description: "Automated scoring and follow-up for sales pipeline",
+    descriptionNl: "Geautomatiseerde scoring en opvolging voor verkooppipeline",
     before: {
-      time: "Weekly manual",
-      timeNl: "Wekelijks handmatig",
-      steps: 8,
+      time: "Manual review",
+      timeNl: "Handmatige review",
+      steps: 6,
       manual: true,
     },
     after: {
@@ -79,7 +79,7 @@ const projects: Project[] = [
       steps: 0,
       manual: false,
     },
-    tags: ["Webhooks", "Make", "API"],
+    tags: ["GPT-4", "Make", "CRM"],
   },
 ];
 
