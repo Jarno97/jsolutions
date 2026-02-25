@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import ThemeToggle from "@/components/ThemeToggle";
+import Projects from "@/components/Projects";
 
 const services = [
   {
@@ -39,6 +40,9 @@ export default function Home() {
             </a>
             <a href="#services" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               Services
+            </a>
+            <a href="#projects" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+              Projects
             </a>
             <a href="#contact" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               Contact
@@ -155,6 +159,9 @@ export default function Home() {
           </div>
         </FadeIn>
       </section>
+
+      {/* Projects Section */}
+      <Projects />
 
       {/* Contact Section */}
       <section id="contact" className="py-16 md:py-24 px-4 md:px-6 bg-zinc-50 dark:bg-black">
