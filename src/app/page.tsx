@@ -9,6 +9,7 @@ import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/components/LanguageContext";
 import Contact from "@/components/Contact";
 import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
 
 const services = [
   {
@@ -64,6 +65,9 @@ export default function Home() {
             </a>
             <a href="#testimonials" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               {t("Testimonials", "Referenties")}
+            </a>
+            <a href="#pricing" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+              {t("Pricing", "Prijzen")}
             </a>
             <a href="#projects" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               {t("Projects", "Projecten")}
@@ -194,6 +198,9 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Pricing Section */}
+      <Pricing />
 
       {/* Projects Section */}
       <Projects />
