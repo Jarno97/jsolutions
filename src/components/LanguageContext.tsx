@@ -8,7 +8,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (en: string, nl: string) => string;
-  key: number;
+  isTransitioning: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -16,6 +16,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("nl");
   const [mounted, setMounted] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -27,8 +28,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const handleSetLanguage = (lang: Language) => {
     if (lang !== language) {
+      setIsTransitioning(true);
       setLanguage(lang);
       localStorage.setItem("language", lang);
+      setTimeout(() => setIsTransitioning(false), 50);
     }
   };
 
@@ -41,7 +44,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t, key: language === "en" ? 1 : 0 }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t, isTransitioning }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -55,7 +58,7 @@ export function useLanguage() {
       language: "nl" as Language,
       setLanguage: () => {},
       t: (en: string, nl: string) => nl, // Default to Dutch during SSR
-      key: 0,
+      isTransitioning: false,
     };
   }
   return context;
