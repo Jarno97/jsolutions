@@ -19,26 +19,28 @@ const tiers: Tier[] = [
   {
     name: "Quick Fix",
     nameNl: "Snelle Oplossing",
-    price: "€500",
-    priceNl: "€500",
+    price: "€750",
+    priceNl: "€750",
     description: "Perfect for small automations",
     descriptionNl: "Perfect voor kleine automatiseringen",
     features: [
       "1 automation or chatbot",
       "Basic integration",
       "30-day support",
+      "1 week delivery",
     ],
     featuresNl: [
       "1 automatisering of chatbot",
       "Basis integratie",
       "30 dagen ondersteuning",
+      "1 week levering",
     ],
   },
   {
     name: "Growth",
     nameNl: "Groeien",
-    price: "€2,000",
-    priceNl: "€2.000",
+    price: "€2,500",
+    priceNl: "€2.500",
     description: "For businesses ready to scale",
     descriptionNl: "Voor bedrijven die willen groeien",
     features: [
@@ -46,6 +48,7 @@ const tiers: Tier[] = [
       "Advanced integrations",
       "Custom AI training",
       "90-day support",
+      "3 week delivery",
     ],
     featuresNl: [
       "3 automatiseringen of chatbots",
@@ -67,12 +70,14 @@ const tiers: Tier[] = [
       "Full system integration",
       "Dedicated support",
       "Monthly optimization",
+      "Flexible timeline",
     ],
     featuresNl: [
       "Onbeperkte automatiseringen",
       "Volledige systeemintegratie",
       "Toegewijde ondersteuning",
       "Maandelijkse optimalisatie",
+      "Flexibele tijdlijn",
     ],
   },
 ];
