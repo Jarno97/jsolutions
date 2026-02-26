@@ -14,21 +14,46 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JSolutions | AI Agents & Automations",
-  description: "Smart AI agents, automations, and chatbots that handle the repetitive stuff so you can focus on what matters. Built by Jarno Swinkels.",
-  keywords: ["AI", "automation", "chatbots", "AI agents", "software development", " Netherlands"],
+  metadataBase: new URL("https://jsolutions.nl"),
+  title: {
+    default: "JSolutions | AI Agents & Automations",
+    template: "%s | JSolutions",
+  },
+  description: "AI agents, automations & chatbots that handle the repetitive stuff so you can focus on what matters. Built by Jarno Swinkels in the Netherlands.",
+  keywords: ["AI agents", "automation", "chatbots", "AI automation", "business automation", "AI consultant", "Netherlands", "Dutch AI developer", "Make.com", "Zapier alternatives"],
   authors: [{ name: "Jarno Swinkels" }],
+  creator: "Jarno Swinkels",
+  publisher: "JSolutions",
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
   openGraph: {
     title: "JSolutions | AI Agents & Automations",
-    description: "Smart AI agents, automations, and chatbots that handle the repetitive stuff so you can focus on what matters.",
-    type: "website",
-    locale: "en_US",
+    description: "AI agents, automations & chatbots that handle the repetitive stuff so you can focus on what matters.",
+    url: "https://jsolutions.nl",
     siteName: "JSolutions",
+    locale: "en_US",
+    alternateLocale: "nl_NL",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "JSolutions | AI Agents & Automations",
-    description: "Smart AI agents, automations, and chatbots that handle the repetitive stuff so you can focus on what matters.",
+    description: "AI agents, automations & chatbots that handle the repetitive stuff so you can focus on what matters.",
+    creator: "@jarno97",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -41,6 +66,33 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="canonical" href="https://jsolutions.nl" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "JSolutions",
+              "description": "AI agents, automations & chatbots for businesses in the Netherlands",
+              "url": "https://jsolutions.nl",
+              "telephone": "+31-6-12345678",
+              "email": "hello@jsolutions.nl",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "NL",
+                "addressLocality": "Netherlands"
+              },
+              "founder": {
+                "@type": "Person",
+                "name": "Jarno Swinkels"
+              },
+              "areaServed": "Netherlands",
+              "serviceType": ["AI Agents", "Chatbots", "Business Automation"],
+              "priceRange": "€500-€5000"
+            }),
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
