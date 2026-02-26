@@ -107,7 +107,7 @@ export default function Home() {
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white max-w-4xl mb-4 md:mb-6">
             {t("AI Agents & Automations that work for you", "AI Agents & Automatisering die voor je werken")}
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8 md:mb-12">
+          <p className="text-base sm:text-lg md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-8 md:mb-12">
             {t("Smart solutions that handle the repetitive stuff so you can focus on what matters.", "Slimme oplossingen die het repetitieve werk doen, zodat jij je kunt richten op wat belangrijk is.")}
           </p>
 
