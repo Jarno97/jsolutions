@@ -78,7 +78,7 @@ const tiers: Tier[] = [
 ];
 
 export default function Pricing() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="pricing" className="py-16 md:py-24 px-4 md:px-6">
@@ -122,7 +122,7 @@ export default function Pricing() {
                   </div>
 
                   <ul className="space-y-3 mb-8 flex-grow">
-                    {(tier.popular ? tier.features : tier.featuresNl).map((feature, i) => (
+                    {(language === "en" ? tier.features : tier.featuresNl).map((feature, i) => (
                       <li key={i} className="flex items-center gap-2 text-sm">
                         <svg
                           className={`w-5 h-5 flex-shrink-0 ${
