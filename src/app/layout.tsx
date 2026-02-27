@@ -90,7 +90,11 @@ export default function RootLayout({
               },
               "areaServed": "Netherlands",
               "serviceType": ["AI Agents", "Chatbots", "Business Automation"],
-              "priceRange": "€500-€5000"
+              "priceRange": "€500-€5000",
+              "sameAs": [
+                "https://github.com/Jarno97",
+                "https://www.linkedin.com/in/jarnoswinkels/"
+              ]
             }),
           }}
         />
