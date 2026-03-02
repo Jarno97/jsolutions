@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import WhatIsIt from "@/components/WhatIsIt";
 import UseCases from "@/components/UseCases";
+import CaseStudy from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
   title: "Automations | Smart Business Processes",
@@ -40,7 +41,7 @@ const automationsUseCases = [
   {
     icon: "📱",
     title: "Social Media Posting",
-    titleNl: "Social Media Posten",
+    titlenl: "Social Media Posten",
     description: "Schedule and publish posts across multiple social media platforms from a single dashboard.",
     descriptionNl: "Plan en publiceer berichten op meerdere social media platforms vanuit één dashboard.",
   },
@@ -52,6 +53,26 @@ const automationsUseCases = [
     descriptionNl: "Werk automatisch klantrecords bij, volg interacties en trigger follow-up acties.",
   },
 ];
+
+const automationsCaseStudy = {
+  client: "DTC E-commerce Brand",
+  industry: "E-commerce",
+  size: "~25 employees",
+  challenge: "Finance team manually entering invoice data into QuickBooks. Customer and order data inconsistent between Shopify and HubSpot. Weekly performance reports built manually in spreadsheets. Delays in follow-up emails after purchases. Operations manager spending 10+ hours per week reconciling data. As order volume increased, operational bottlenecks became costly and error-prone.",
+  challengeNl: "Finance team handmatig factuurgegevens invoerde in QuickBooks. Klant- en ordergegevens inconsistent tussen Shopify en HubSpot. Wekelijkse performance rapporten handmatig in spreadsheets opgebouwd. Vertragingen in follow-up e-mails na aankopen. Operations manager besteedde 10+ uur per week aan data reconciliatie. Naarmate ordervolume toenam, werden operationele knelpunten kostbaar en foutgevoelig.",
+  solution: "We designed and deployed a custom automation pipeline connecting Shopify, QuickBooks, HubSpot, and Google Sheets. Core automations: Invoice Processing, CRM & Order Synchronization, Automated Reporting, and Operational Alerts. Implementation took 4 weeks with no new software purchases required.",
+  solutionNl: "We ontwierpen en implementeerden een aangepaste automatisering pipeline die Shopify, QuickBooks, HubSpot en Google Sheets verbond. Kernautomatiseringen: Factuurverwerking, CRM & Order Synchronisatie, Geautomatiseerde Rapportage en Operationele Alerts. Implementatie duurde 4 weken zonder nieuwe software aankopen.",
+  results: [
+    { label: "Invoice entry ↓", labelNl: "Factuurinvoer ↓", value: "85%" },
+    { label: "CRM sync", labelNl: "CRM sync", value: "100%" },
+    { label: "Hours saved/week", labelNl: "Uren bespaard/week", value: "10+" },
+    { label: "Data errors ↓", labelNl: "Data fouten ↓", value: "30%" },
+    { label: "Follow-up speed", labelNl: "Follow-up snelheid", value: "Instant" },
+    { label: "Role reallocated", labelNl: "Rol herverdeeld", value: "1 FTE" },
+  ],
+  impact: "Instead of relying on manual handoffs between tools, the business now runs on structured automation. Every trigger executes predictably, data remains consistent across systems, errors are flagged immediately, and leadership has real-time visibility into KPIs. The result is a scalable operational backbone that supports growth without increasing headcount.",
+  impactNl: "In plaats van te vertrouwen op handmatige overdrachten tussen tools, draait het bedrijf nu op gestructureerde automatisering. Elke trigger wordt voorspelbaar uitgevoerd, data blijft consistent over systemen, fouten worden direct gesignaleerd en leiderschap heeft real-time inzicht in KPI's. Het resultaat is een schaalbare operationele ruggengraat die groei ondersteunt zonder het aantal medewerkers te verhogen.",
+};
 
 export default function AutomationsPage() {
   return (
@@ -86,6 +107,8 @@ We bouwen aangepaste automatisering pipelines die je bestaande tools verbinden �
       />
 
       <UseCases useCases={automationsUseCases} />
+
+      <CaseStudy {...automationsCaseStudy} />
     </main>
   );
 }
