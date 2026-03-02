@@ -55,17 +55,17 @@ export default function Testimonials() {
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <FadeIn key={index} delay={index * 100}>
-                <div className="p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-charcoal-light border border-transparent hover:border-lime/30 transition-all duration-300 h-full group">
+                <div className="p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-charcoal-light border border-transparent hover:border-lime/30 transition-all duration-300 h-full group flex flex-col">
                   {/* Large decorative quote mark */}
                   <span className="text-8xl text-lime/20 font-serif leading-none select-none group-hover:text-lime/30 transition-colors">"</span>
                   
                   {/* Quote */}
-                  <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6 -mt-4 relative z-10">
+                  <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6 -mt-4 relative z-10 flex-grow">
                     {t(testimonial.quote, testimonial.quoteNl)}
                   </p>
                   
                   {/* Author */}
-                  <div className="border-t border-zinc-200 dark:border-zinc-700 pt-4">
+                  <div className="border-t border-zinc-200 dark:border-zinc-700 pt-4 mt-auto">
                     <p className="font-bold text-charcoal dark:text-white">
                       {testimonial.author}
                     </p>
