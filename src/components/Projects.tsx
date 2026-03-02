@@ -106,10 +106,10 @@ export default function Projects() {
             {t("Projects", "Projecten")}
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-center text-charcoal dark:text-white mb-6 md:mb-8">
-            {t("Results that speak", "Resultaten die spreken")}
+            {t("From Hours to Minutes", "Van Uur naar Minuut")}
           </h2>
           <p className="text-center text-zinc-600 dark:text-zinc-400 mb-14 md:mb-20 max-w-xl mx-auto text-lg">
-            {t("Real problems, real solutions. See what automation can do.", "Echte problemen, echte oplossingen. Zie wat automatisering kan doen.")}
+            {t("Production-ready systems that replace repetitive work with autonomous execution.", "Productieklare systemen die repetitief werk vervangen door autonome uitvoering.")}
           </p>
 
           <div className="grid gap-8">
