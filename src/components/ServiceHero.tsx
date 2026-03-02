@@ -59,10 +59,15 @@ export default function ServiceHero({ title, titleNl, subtitle, subtitleNl, cta,
       </div>
       
       {/* Back to home */}
-      <div className="absolute top-24 left-4 md:left-8">
-        <Link href="/" className="font-mono text-sm text-concrete hover:text-lime transition-colors">
-          ← {t("Back to home", "Terug naar home")}
-        </Link>
+      <div className="absolute top-4 left-0 right-0 z-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <Link href="/" className="inline-flex items-center gap-2 font-mono text-base md:text-sm text-concrete hover:text-lime transition-colors bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm px-4 py-2 rounded-full">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            {t("Back", "Terug")}
+          </Link>
+        </div>
       </div>
     </section>
   );
