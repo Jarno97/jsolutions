@@ -157,13 +157,13 @@ export default function Home() {
             </h2>
             <div className="space-y-5 md:space-y-7 text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
               <p>
-                {t("Years of experience as a software engineer, now focused on automation & AI.", "Jaren ervaring als software engineer, nu gericht op automatisering & AI.")}
+                {t("I design AI and automation systems that reduce manual work and improve performance.", "Ik ontwerp AI- en automatiseringssystemen die handmatig werk verminderen en prestaties verbeteren.")}
+              </p>
+              <p className="font-mono text-charcoal dark:text-white">
+                {t("Strategic thinking. Clean execution. Clear communication.", "Strategisch denken. Schone uitvoering. Duidelijke communicatie.")}
               </p>
               <p>
-                {t("I've always believed AI should handle the boring stuff — so why not help others do the same?", "Ik heb altijd gevonden dat AI het saaie werk moet doen — dus waarom anderen niet helpen hetzelfde te doen?")}
-              </p>
-              <p>
-                {t("Building your product is a collaboration.", "Je product bouwen is een samenwerking.")} <span className="text-charcoal dark:text-white font-medium">{t("Communication is my thing.", "Communicatie is mijn ding.")}</span> {t("Let's make your life easier.", "Laten we je leven makkelijker maken.")}
+                {t("Let's build smarter operations.", "Laten we slimmere operaties bouwen.")}
               </p>
             </div>
             <a
