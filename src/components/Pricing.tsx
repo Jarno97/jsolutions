@@ -106,7 +106,7 @@ export default function Pricing() {
                   className={`relative p-6 md:p-8 rounded-2xl h-full flex flex-col transition-all duration-300 hover-lift ${
                     tier.popular
                       ? "bg-charcoal text-white dark:bg-white dark:text-charcoal ring-2 ring-lime"
-                      : "bg-white dark:bg-charcoal border border-zinc-200 dark:border-zinc-700 hover:border-lime/50"
+                      : "bg-white dark:bg-charcoal border border-zinc-200 dark:border-zinc-700 hover:border-lime/50 text-charcoal"
                   }`}
                 >
                   {tier.popular && (
@@ -124,14 +124,14 @@ export default function Pricing() {
                     <p className="text-4xl font-bold mb-2">
                       {t(tier.price, tier.priceNl)}
                     </p>
-                    <p className={`text-sm ${tier.popular ? "text-zinc-400 dark:text-zinc-600" : "text-concrete"}`}>
+                    <p className={`text-sm ${tier.popular ? "text-zinc-400 dark:text-zinc-600" : "text-zinc-500"}`}>
                       {t(tier.description, tier.descriptionNl)}
                     </p>
                   </div>
 
                   <ul className="space-y-3 mb-8 flex-grow">
                     {(language === "en" ? tier.features : tier.featuresNl).map((feature, i) => (
-                      <li key={i} className="flex items-center gap-3 text-sm">
+                      <li key={i} className={`flex items-center gap-3 text-sm ${tier.popular ? "text-zinc-300 dark:text-zinc-400" : "text-zinc-600 dark:text-zinc-400"}`}>
                         <svg
                           className={`w-5 h-5 flex-shrink-0 ${
                             tier.popular ? "text-lime" : "text-lime"
