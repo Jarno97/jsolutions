@@ -9,12 +9,14 @@ import { useLanguage } from "@/components/LanguageContext";
 import Contact from "@/components/Contact";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
+import Link from "next/link";
 
 const services = [
   {
     icon: "🤖",
     title: "AI Agents",
     titleNl: "AI Agents",
+    slug: "ai-agents",
     description:
       "Intelligent assistants that handle complex tasks autonomously. From customer support to data processing, our agents learn and adapt to your workflows.",
     descriptionNl:
@@ -24,6 +26,7 @@ const services = [
     icon: "⚡",
     title: "Automations",
     titleNl: "Automatisering",
+    slug: "automations",
     description:
       "Eliminate repetitive tasks with custom automation pipelines. We connect your tools and streamline processes so you can focus on high-value work.",
     descriptionNl:
@@ -33,6 +36,7 @@ const services = [
     icon: "💬",
     title: "Chatbots",
     titleNl: "Chatbots",
+    slug: "chatbots",
     description:
       "Conversational AI that actually understands. Natural language interfaces for websites, apps, or internal tools that engage users effectively.",
     descriptionNl:
@@ -138,15 +142,15 @@ export default function Home() {
 
         {/* Services pills */}
         <div className="flex flex-wrap justify-center gap-3 mb-10 md:mb-14 px-4 animate-reveal animation-delay-400">
-          <span className="px-5 py-2.5 bg-charcoal dark:bg-white rounded-full text-sm text-white dark:text-charcoal font-medium font-mono">
+          <Link href="/ai-agents" className="px-5 py-2.5 bg-charcoal dark:bg-white rounded-full text-sm text-white dark:text-charcoal font-medium font-mono hover:bg-lime hover:text-charcoal transition-colors">
             🤖 {t("AI Agents", "AI Agents")}
-          </span>
-          <span className="px-5 py-2.5 bg-charcoal dark:bg-white rounded-full text-sm text-white dark:text-charcoal font-medium font-mono">
+          </Link>
+          <Link href="/automations" className="px-5 py-2.5 bg-charcoal dark:bg-white rounded-full text-sm text-white dark:text-charcoal font-medium font-mono hover:bg-lime hover:text-charcoal transition-colors">
             ⚡ {t("Automations", "Automatisering")}
-          </span>
-          <span className="px-5 py-2.5 bg-charcoal dark:bg-white rounded-full text-sm text-white dark:text-charcoal font-medium font-mono">
+          </Link>
+          <Link href="/chatbots" className="px-5 py-2.5 bg-charcoal dark:bg-white rounded-full text-sm text-white dark:text-charcoal font-medium font-mono hover:bg-lime hover:text-charcoal transition-colors">
             💬 {t("Chatbots", "Chatbots")}
-          </span>
+          </Link>
         </div>
 
         {/* CTA Button */}
@@ -218,8 +222,9 @@ export default function Home() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {services.map((service, index) => (
                 <FadeIn key={index} delay={index * 150}>
-                  <div
-                    className="p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-charcoal-light border border-transparent hover:border-lime/50 hover-lift transition-all duration-300 h-full group"
+                  <Link
+                    href={`/${service.slug}`}
+                    className="block p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-charcoal-light border border-transparent hover:border-lime/50 hover-lift transition-all duration-300 h-full group"
                   >
                     <span className="text-4xl mb-4 block">{service.icon}</span>
                     <h3 className="text-xl font-bold text-charcoal dark:text-white mb-3 font-mono">
@@ -228,7 +233,7 @@ export default function Home() {
                     <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       {t(service.description, service.descriptionNl)}
                     </p>
-                  </div>
+                  </Link>
                 </FadeIn>
               ))}
             </div>
