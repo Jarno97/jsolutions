@@ -2,6 +2,19 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Design System Theme Extension */
+@theme {
+  --color-charcoal: #0d0d0d;
+  --color-charcoal-light: #1a1a1a;
+  --color-concrete: #8b8b8b;
+  --color-concrete-light: #a3a3a3;
+  --color-lime: #c4f542;
+  --color-lime-dim: #a8c936;
+  
+  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-dm-sans);
+}
+
 html {
   scroll-behavior: smooth;
 }

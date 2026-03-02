@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import ThemeToggle from "@/components/ThemeToggle";
 import Projects from "@/components/Projects";
@@ -45,44 +44,44 @@ export default function Home() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+    <div className="min-h-screen bg-white dark:bg-charcoal font-sans">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-50/80 dark:bg-black/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-charcoal/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
         <nav className="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
-          <a href="#" className="text-lg md:text-xl font-bold text-black dark:text-white">
-            JSolutions
+          <a href="#" className="text-lg md:text-xl font-bold font-mono text-charcoal dark:text-white tracking-tight">
+            JSolutions<span className="text-lime">.</span>
           </a>
           {/* Desktop nav */}
-          <div className="hidden md:flex gap-4 items-center">
-            <a href="#about" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+          <div className="hidden md:flex gap-6 items-center">
+            <a href="#about" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono">
               {t("About", "Over")}
             </a>
-            <a href="#services" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+            <a href="#services" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono">
               {t("Services", "Diensten")}
             </a>
-            <a href="#how-it-works" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+            <a href="#how-it-works" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono">
               {t("How it works", "Hoe het werkt")}
             </a>
-            <a href="#testimonials" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+            <a href="#testimonials" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono">
               {t("Testimonials", "Referenties")}
             </a>
-            <a href="#pricing" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+            <a href="#pricing" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono">
               {t("Pricing", "Prijzen")}
             </a>
-            <a href="#projects" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+            <a href="#projects" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono">
               {t("Projects", "Projecten")}
             </a>
-            <a href="#contact" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+            <a href="#contact" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono">
               {t("Contact", "Contact")}
             </a>
             <LanguageToggle />
             <ThemeToggle />
           </div>
-          {/* Mobile nav - simple version */}
+          {/* Mobile nav */}
           <div className="flex md:hidden gap-2 items-center">
             <LanguageToggle />
             <ThemeToggle />
-            <a href="#contact" className="text-sm px-3 py-2 bg-black dark:bg-white text-white dark:text-black font-medium rounded-full">
+            <a href="#contact" className="text-sm px-4 py-2 bg-lime text-charcoal font-semibold rounded-full font-mono hover:opacity-80 transition-opacity">
               {t("Contact", "Contact")}
             </a>
           </div>
@@ -90,70 +89,86 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center min-h-[80vh] px-4 md:px-6 py-16 md:py-24 text-center relative pt-28 md:pt-32">
-        {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200"
-            alt="Technology abstract"
-            fill
-            className="object-cover opacity-30 dark:opacity-15 grayscale"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-50/60 to-zinc-50/60 dark:from-black/60 dark:to-black/60" />
-        </div>
+      <section className="flex flex-col items-center justify-center min-h-[85vh] px-4 md:px-6 py-24 text-center relative pt-28 md:pt-32 overflow-hidden">
+        {/* Background: Grid + noise */}
+        <div className="absolute inset-0 z-0 bg-grid dark:bg-grid-dark" />
+        <div className="absolute inset-0 z-0 noise-overlay" />
+        
+        {/* Floating geometric elements */}
+        <div className="absolute top-1/4 left-10 w-20 h-20 border-2 border-lime/20 rotate-12 hidden lg:block animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute bottom-1/4 right-10 w-16 h-16 border-2 border-charcoal/10 -rotate-12 hidden lg:block animate-pulse" style={{ animationDuration: '5s' }} />
+        <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-lime/40 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '3s' }} />
 
-        <div className="relative z-10 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white max-w-4xl mb-4 md:mb-6">
+        <div className="relative z-10 px-4 max-w-5xl">
+          {/* Tagline */}
+          <p className="font-mono text-xs md:text-sm tracking-[0.3em] uppercase text-concrete mb-6 animate-reveal">
+            {t("AI & Automation Specialist", "AI & Automatisering Specialist")}
+          </p>
+          
+          {/* Main heading */}
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-charcoal dark:text-white max-w-4xl mx-auto mb-6 md:mb-8 leading-[1.1] animate-reveal animation-delay-200">
             {t("AI Agents & Automations that work for you", "AI Agents & Automatisering die voor je werken")}
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-8 md:mb-12">
+          
+          {/* Subheading */}
+          <p className="text-base md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-10 md:mb-14 leading-relaxed animate-reveal animation-delay-300">
             {t("Smart solutions that handle the repetitive stuff so you can focus on what matters.", "Slimme oplossingen die het repetitieve werk doen, zodat jij je kunt richten op wat belangrijk is.")}
           </p>
 
-        {/* Services */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 md:mb-12 px-4">
-          <span className="px-4 sm:px-6 py-2 sm:py-3 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm sm:text-base text-zinc-700 dark:text-zinc-300 font-medium">
+        {/* Services pills */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10 md:mb-14 px-4 animate-reveal animation-delay-400">
+          <span className="px-5 py-2.5 bg-charcoal dark:bg-white rounded-full text-sm text-white dark:text-charcoal font-medium font-mono">
             🤖 {t("AI Agents", "AI Agents")}
           </span>
-          <span className="px-4 sm:px-6 py-2 sm:py-3 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm sm:text-base text-zinc-700 dark:text-zinc-300 font-medium">
+          <span className="px-5 py-2.5 bg-charcoal dark:bg-white rounded-full text-sm text-white dark:text-charcoal font-medium font-mono">
             ⚡ {t("Automations", "Automatisering")}
           </span>
-          <span className="px-4 sm:px-6 py-2 sm:py-3 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm sm:text-base text-zinc-700 dark:text-zinc-300 font-medium">
+          <span className="px-5 py-2.5 bg-charcoal dark:bg-white rounded-full text-sm text-white dark:text-charcoal font-medium font-mono">
             💬 {t("Chatbots", "Chatbots")}
           </span>
         </div>
 
+        {/* CTA Button */}
         <a
           href="#contact"
-          className="px-6 py-3 md:px-8 md:py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:opacity-80 transition-opacity text-sm md:text-base"
+          className="inline-block px-8 py-4 md:px-10 md:py-5 bg-lime text-charcoal font-bold rounded-full text-base md:text-lg hover-lift btn-accent animate-reveal animation-delay-500"
         >
-          {t("Get in touch", "Neem contact op")}
+          {t("Get in touch →", "Neem contact op →")}
         </a>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <svg className="w-6 h-6 text-concrete" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 md:py-24 px-4 md:px-6 bg-white dark:bg-zinc-900">
+      <section id="about" className="py-20 md:py-32 px-4 md:px-6 bg-zinc-50 dark:bg-charcoal-light">
         <FadeIn>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white mb-8 md:mb-12">
-              {t("About me", "Over mij")}
+            <p className="font-mono text-xs tracking-[0.2em] uppercase text-lime mb-6">
+              {t("About", "Over")}
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-charcoal dark:text-white mb-8 md:mb-12 leading-tight">
+              {t("Hi, I'm Jarno Swinkels.", "Hoi, ik ben Jarno Swinkels.")}
             </h2>
-            <div className="space-y-4 md:space-y-6 text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <div className="space-y-5 md:space-y-7 text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
               <p>
-                <span className="text-black dark:text-white font-semibold">{t("Hi, I'm Jarno Swinkels.", "Hoi, ik ben Jarno Swinkels.")}</span> {t("Years of experience as a software engineer, now focused on automation & AI.", "Jaren ervaring als software engineer, nu gericht op automatisering & AI.")}
+                {t("Years of experience as a software engineer, now focused on automation & AI.", "Jaren ervaring als software engineer, nu gericht op automatisering & AI.")}
               </p>
               <p>
                 {t("I've always believed AI should handle the boring stuff — so why not help others do the same?", "Ik heb altijd gevonden dat AI het saaie werk moet doen — dus waarom anderen niet helpen hetzelfde te doen?")}
               </p>
               <p>
-                {t("Building your product is a collaboration.", "Je product bouwen is een samenwerking.")} <span className="text-black dark:text-white font-medium">{t("Communication is my thing.", "Communicatie is mijn ding.")}</span> {t("Let's make your life easier.", "Laten we je leven makkelijker maken.")}
+                {t("Building your product is a collaboration.", "Je product bouwen is een samenwerking.")} <span className="text-charcoal dark:text-white font-medium">{t("Communication is my thing.", "Communicatie is mijn ding.")}</span> {t("Let's make your life easier.", "Laten we je leven makkelijker maken.")}
               </p>
             </div>
             <a
               href="mailto:hello@jsolutions.nl"
-              className="inline-block mt-10 px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white font-semibold rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+              className="inline-block mt-12 px-8 py-4 border-2 border-charcoal dark:border-white text-charcoal dark:text-white font-semibold rounded-full hover:bg-lime hover:border-lime hover:text-charcoal dark:hover:bg-lime dark:hover:text-charcoal dark:hover:border-lime transition-all font-mono"
             >
               {t("Get in touch", "Neem contact op")}
             </a>
@@ -162,13 +177,16 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 md:py-24 px-4 md:px-6 bg-white dark:bg-zinc-900">
+      <section id="services" className="py-20 md:py-32 px-4 md:px-6 bg-white dark:bg-charcoal">
         <FadeIn>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-4xl font-bold text-center text-black dark:text-white mb-8 md:mb-16">
+            <p className="font-mono text-xs tracking-[0.2em] uppercase text-lime text-center mb-6">
+              {t("Services", "Diensten")}
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-center text-charcoal dark:text-white mb-6 md:mb-8">
               {t("What I do", "Wat ik doe")}
             </h2>
-            <p className="text-center text-zinc-600 dark:text-zinc-400 mb-12 md:mb-16 max-w-xl mx-auto">
+            <p className="text-center text-zinc-600 dark:text-zinc-400 mb-14 md:mb-20 max-w-xl mx-auto text-lg">
               {t("So you do less.", "Zodat jij minder doet.")}
             </p>
 
@@ -176,10 +194,10 @@ export default function Home() {
               {services.map((service, index) => (
                 <FadeIn key={index} delay={index * 150}>
                   <div
-                    className="p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-800 hover:shadow-lg transition-shadow duration-300 h-full"
+                    className="p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-charcoal-light border border-transparent hover:border-lime/50 hover-lift transition-all duration-300 h-full group"
                   >
                     <span className="text-4xl mb-4 block">{service.icon}</span>
-                    <h3 className="text-xl font-semibold text-black dark:text-white mb-3">
+                    <h3 className="text-xl font-bold text-charcoal dark:text-white mb-3 font-mono">
                       {t(service.title, service.titleNl)}
                     </h3>
                     <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -209,17 +227,17 @@ export default function Home() {
       <Contact />
 
       {/* Footer */}
-      <footer className="py-8 md:py-12 px-4 md:px-6 bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 text-center md:text-left">
-          <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
-            © {new Date().getFullYear()} JSolutions. {t("All rights reserved.", "Alle rechten voorbehouden.")}
+      <footer className="py-10 md:py-16 px-4 md:px-6 bg-zinc-100 dark:bg-charcoal-light border-t border-zinc-200 dark:border-zinc-800">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 font-mono">
+            © {new Date().getFullYear()} JSolutions<span className="text-lime">.</span>
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-8">
             <a
               href="https://www.linkedin.com/in/jarnoswinkels/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+              className="text-sm font-mono text-zinc-600 dark:text-zinc-400 hover:text-lime transition-colors"
             >
               LinkedIn
             </a>
@@ -227,7 +245,7 @@ export default function Home() {
               href="https://github.com/Jarno97"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+              className="text-sm font-mono text-zinc-600 dark:text-zinc-400 hover:text-lime transition-colors"
             >
               GitHub
             </a>
