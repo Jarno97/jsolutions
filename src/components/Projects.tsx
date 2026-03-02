@@ -144,8 +144,8 @@ export default function Projects() {
                   <div className="p-6 md:p-8">
                     <div className="grid md:grid-cols-2 gap-6 md:gap-12">
                       {/* Before */}
-                      <div className="relative pt-2">
-                        <div className="absolute -top-0 left-4 px-3 py-1 bg-amber-500 text-white text-xs font-bold rounded-full uppercase tracking-wide font-mono">
+                      <div className="relative">
+                        <div className="absolute -top-3 left-4 px-3 py-1 bg-amber-500 text-white text-xs font-bold rounded-full uppercase tracking-wide font-mono">
                           {t("Before", "Voor")}
                         </div>
                         <div className="pt-4 space-y-4">
@@ -180,8 +180,8 @@ export default function Projects() {
                       </div>
 
                       {/* After */}
-                      <div className="relative pt-2">
-                        <div className="absolute -top-0 left-4 px-3 py-1 bg-lime text-charcoal text-xs font-bold rounded-full uppercase tracking-wide font-mono">
+                      <div className="relative">
+                        <div className="absolute -top-3 left-4 px-3 py-1 bg-lime text-charcoal text-xs font-bold rounded-full uppercase tracking-wide font-mono">
                           {t("After", "Na")}
                         </div>
                         <div className="pt-4 space-y-4">
