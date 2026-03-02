@@ -95,9 +95,30 @@ export default function Home() {
         <div className="absolute inset-0 z-0 noise-overlay" />
         
         {/* Floating geometric elements */}
-        <div className="absolute top-1/4 left-10 w-20 h-20 border-2 border-lime/20 rotate-12 hidden lg:block animate-pulse" style={{ animationDuration: '4s' }} />
-        <div className="absolute bottom-1/4 right-10 w-16 h-16 border-2 border-charcoal/10 -rotate-12 hidden lg:block animate-pulse" style={{ animationDuration: '5s' }} />
-        <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-lime/40 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '3s' }} />
+        <div className="absolute top-[15%] left-[5%] w-16 h-16 border-2 border-lime/20 rotate-12 hidden lg:block animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute top-[25%] left-[8%] w-2 h-2 bg-lime/60 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '2s' }} />
+        
+        <div className="absolute bottom-[20%] left-[10%] w-12 h-12 border border-charcoal/10 rotate-45 hidden lg:block animate-pulse" style={{ animationDuration: '6s' }} />
+        <div className="absolute bottom-[30%] left-[15%] w-1.5 h-1.5 bg-concrete/50 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '3s' }} />
+        
+        <div className="absolute top-[20%] right-[8%] w-20 h-20 border border-charcoal/10 -rotate-12 hidden lg:block animate-pulse" style={{ animationDuration: '5s' }} />
+        <div className="absolute top-[35%] right-[12%] w-3 h-3 bg-lime/40 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '3s' }} />
+        <div className="absolute top-[15%] right-[5%] w-2 h-2 bg-lime/60 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '2.5s' }} />
+        
+        <div className="absolute bottom-[25%] right-[8%] w-14 h-14 border-2 border-lime/15 rotate-12 hidden lg:block animate-pulse" style={{ animationDuration: '4.5s' }} />
+        <div className="absolute bottom-[15%] right-[12%] w-1.5 h-1.5 bg-concrete/40 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '3.5s' }} />
+        
+        {/* Extra small particles */}
+        <div className="absolute top-[40%] left-[20%] w-1 h-1 bg-lime/30 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '1.5s' }} />
+        <div className="absolute top-[60%] left-[25%] w-1 h-1 bg-concrete/30 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '2s' }} />
+        <div className="absolute top-[30%] right-[25%] w-1 h-1 bg-lime/30 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '1.8s' }} />
+        <div className="absolute bottom-[40%] right-[20%] w-1 h-1 bg-concrete/30 rounded-full hidden lg:block animate-pulse" style={{ animationDuration: '2.2s' }} />
+        
+        {/* Diagonal lines */}
+        <div className="absolute top-0 left-0 w-full h-full hidden lg:block overflow-hidden pointer-events-none">
+          <div className="absolute top-[30%] left-[-10%] w-[40%] h-px bg-gradient-to-r from-transparent via-lime/10 to-transparent rotate-12" />
+          <div className="absolute top-[60%] left-[-5%] w-[30%] h-px bg-gradient-to-r from-transparent via-charcoal/5 to-transparent -rotate-6" />
+        </div>
 
         <div className="relative z-10 px-4 max-w-5xl">
           {/* Tagline */}
