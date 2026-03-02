@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote: "Clear communication, fast delivery, and results that speak for themselves.",
-    quoteNl: "Duidelijke communicatie, snelle levering, en resultaten die voor zich spreken.",
+    quoteNl: "Erg snelle en professionele service. Automatisering die me uren scheelt per week.",
     author: "Bob Wilson",
     role: "Founder, Startup",
     roleNl: "Founder, Startup",
