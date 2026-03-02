@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import WhatIsIt from "@/components/WhatIsIt";
 import UseCases from "@/components/UseCases";
+import CaseStudy from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
   title: "AI Agents | Intelligent Automation",
@@ -53,6 +54,26 @@ const aiAgentsUseCases = [
   },
 ];
 
+const aiAgentsCaseStudy = {
+  client: "Mid-sized B2B SaaS",
+  industry: "B2B SaaS",
+  size: "~45 employees",
+  challenge: "Support inbox overwhelmed with repetitive questions. 40% of tickets misrouted to wrong team. Sales team manually qualifying every inbound lead. Operations staff spending hours on CRM data cleanup. Slow response times impacting customer satisfaction. The company was hiring to keep up with demand.",
+  challengeNl: "Support inbox overspoeld met repetitieve vragen. 40% van de tickets verkeerd gerouteerd naar verkeerde team. Verkoopteam handmatig elke inkomende lead kwalificeerde. Operations medewerkers uren bezig met CRM data opschonen. Trage reactietijden die klanttevredenheid beïnvloedden. Het bedrijf huurde extra mensen om de vraag bij te benen.",
+  solution: "We deployed a custom AI Agent integrated with HubSpot, Slack, and Zendesk. The agent handles customer support triage, lead qualification, data processing, and internal workflow automation. Implementation took 4 weeks with no changes to existing software stack.",
+  solutionNl: "We implementeerden een aangepaste AI Agent geïntegreerd met HubSpot, Slack en Zendesk. De agent afhandeling klantenservice triagem, lead kwalificatie, data verwerking en interne workflow automatisering. Implementatie duurde 4 weken zonder wijzigingen in bestaande software stack.",
+  results: [
+    { label: "Tickets automated", labelNl: "Tickets geautomatiseerd", value: "62%" },
+    { label: "Response time ↓", labelNl: "Reactietijd ↓", value: "43%" },
+    { label: "SQL increase", labelNl: "SQL toename", value: "28%" },
+    { label: "CRM hours saved", labelNl: "CRM uren bespaard", value: "15h/wk" },
+    { label: "CSAT improvement", labelNl: "CSAT verbetering", value: "91%" },
+    { label: "Annual savings", labelNl: "Jaarlijkse besparing", value: "$120K" },
+  ],
+  impact: "Instead of acting as a chatbot, the AI Agent functioned as a digital operations employee. It made decisions based on context, executed multi-step workflows across tools, improved continuously from real interactions, and operated 24/7 without supervision. The team shifted from reactive manual work to higher-value strategic tasks.",
+  impactNl: "In plaats van te fungeren als chatbot, functioneerde de AI Agent als een digitale operations medewerker. Het nam beslissingen op basis van context, voerde multi-stap workflows uit over tools, verbeterde continu door echte interacties en werkte 24/7 zonder supervisie. Het team schakelde van reactief handmatig werk naar hogere waarde strategische taken.",
+};
+
 export default function AIAgentsPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-charcoal">
@@ -86,6 +107,8 @@ Ze integreren met je bestaande tools en systemen en leren van data en interactie
       />
 
       <UseCases useCases={aiAgentsUseCases} />
+
+      <CaseStudy {...aiAgentsCaseStudy} />
     </main>
   );
 }
