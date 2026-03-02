@@ -46,34 +46,44 @@ export default function HowItWorks() {
   const { t } = useLanguage();
 
   return (
-    <section id="how-it-works" className="py-16 md:py-24 px-4 md:px-6 bg-zinc-100 dark:bg-zinc-900">
+    <section id="how-it-works" className="py-20 md:py-32 px-4 md:px-6 bg-zinc-100 dark:bg-charcoal-light relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-stripes dark:bg-stripes-dark opacity-50" />
+      
       <FadeIn>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-black dark:text-white mb-4 md:mb-6">
+        <div className="max-w-6xl mx-auto relative">
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-lime text-center mb-6">
+            {t("How it works", "Hoe het werkt")}
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-charcoal dark:text-white mb-6 md:mb-8">
             {t("From idea to impact", "Van idee naar impact")}
           </h2>
-          <p className="text-center text-zinc-600 dark:text-zinc-400 mb-12 md:mb-16 max-w-xl mx-auto">
+          <p className="text-center text-zinc-600 dark:text-zinc-400 mb-14 md:mb-20 max-w-xl mx-auto text-lg">
             {t("Simple process, powerful results.", "Simpel proces, krachtige resultaten.")}
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {steps.map((step, index) => (
               <FadeIn key={index} delay={index * 100}>
-                <div className="relative bg-white dark:bg-zinc-800 rounded-2xl p-6 md:p-8 h-full">
-                  {/* Number */}
-                  <div className="text-5xl font-bold text-zinc-100 dark:text-zinc-700 absolute top-4 right-6">
+                <div className="relative bg-white dark:bg-charcoal rounded-2xl p-6 md:p-8 h-full border border-transparent hover:border-lime/30 transition-all duration-300 group">
+                  {/* Number - large background */}
+                  <span className="absolute top-2 right-4 text-6xl md:text-7xl font-bold text-zinc-100 dark:text-zinc-800 select-none font-mono group-hover:text-lime/20 transition-colors">
                     {step.number}
-                  </div>
+                  </span>
 
                   {/* Content */}
                   <div className="relative">
-                    <h3 className="text-xl font-semibold text-black dark:text-white mb-3">
+                    <div className="w-10 h-10 rounded-full bg-lime flex items-center justify-center mb-5 text-charcoal font-bold font-mono text-sm">
+                      {step.number}
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-charcoal dark:text-white mb-3 font-mono">
                       {t(step.title, step.titleNl)}
                     </h3>
-                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-5 text-sm">
                       {t(step.description, step.descriptionNl)}
                     </p>
-                    <div className="inline-block px-3 py-1 bg-zinc-100 dark:bg-zinc-700 rounded-full text-xs font-medium text-zinc-600 dark:text-zinc-300">
+                    <div className="inline-block px-3 py-1.5 bg-charcoal dark:bg-white rounded text-xs font-medium text-white dark:text-charcoal font-mono">
                       {t(step.duration, step.durationNl)}
                     </div>
                   </div>
@@ -83,19 +93,8 @@ export default function HowItWorks() {
           </div>
 
           {/* Connector line (desktop only) */}
-          <div className="hidden lg:block absolute left-0 right-0 top-1/2 -translate-y-1/2 -z-10">
-            <svg className="w-full h-4" preserveAspectRatio="none">
-              <line
-                x1="12%"
-                y1="50%"
-                x2="88%"
-                y2="50%"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeDasharray="8 8"
-                className="text-zinc-300 dark:text-zinc-700"
-              />
-            </svg>
+          <div className="hidden lg:block absolute left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] top-[108px] h-0.5 -z-10">
+            <div className="h-full w-full bg-zinc-200 dark:bg-zinc-700" />
           </div>
         </div>
       </FadeIn>

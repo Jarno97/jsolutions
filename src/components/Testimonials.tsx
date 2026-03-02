@@ -39,34 +39,37 @@ export default function Testimonials() {
   const { t } = useLanguage();
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 px-4 md:px-6 bg-white dark:bg-zinc-900">
+    <section id="testimonials" className="py-20 md:py-32 px-4 md:px-6 bg-white dark:bg-charcoal">
       <FadeIn>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-black dark:text-white mb-4 md:mb-6">
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-lime text-center mb-6">
+            {t("Testimonials", "Referenties")}
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-charcoal dark:text-white mb-6 md:mb-8">
             {t("What clients say", "Wat klanten zeggen")}
           </h2>
-          <p className="text-center text-zinc-600 dark:text-zinc-400 mb-12 md:mb-16 max-w-xl mx-auto">
+          <p className="text-center text-zinc-600 dark:text-zinc-400 mb-14 md:mb-20 max-w-xl mx-auto text-lg">
             {t("Don't just take my word for it.", "Neem niet alleen mijn woord ervoor.")}
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <FadeIn key={index} delay={index * 100}>
-                <div className="p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-800 h-full">
-                  {/* Quote icon */}
-                  <div className="text-4xl text-zinc-300 dark:text-zinc-600 mb-4">"</div>
+                <div className="p-6 md:p-8 rounded-2xl bg-zinc-50 dark:bg-charcoal-light border border-transparent hover:border-lime/30 transition-all duration-300 h-full group">
+                  {/* Large decorative quote mark */}
+                  <span className="text-8xl text-lime/20 font-serif leading-none select-none group-hover:text-lime/30 transition-colors">"</span>
                   
                   {/* Quote */}
-                  <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6">
+                  <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6 -mt-4 relative z-10">
                     {t(testimonial.quote, testimonial.quoteNl)}
                   </p>
                   
                   {/* Author */}
-                  <div>
-                    <p className="font-semibold text-black dark:text-white">
+                  <div className="border-t border-zinc-200 dark:border-zinc-700 pt-4">
+                    <p className="font-bold text-charcoal dark:text-white">
                       {testimonial.author}
                     </p>
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                    <p className="text-sm text-concrete font-mono">
                       {t(testimonial.role, testimonial.roleNl)}
                     </p>
                   </div>
