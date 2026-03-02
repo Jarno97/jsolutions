@@ -1,11 +1,57 @@
 import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import WhatIsIt from "@/components/WhatIsIt";
+import UseCases from "@/components/UseCases";
 
 export const metadata: Metadata = {
   title: "Chatbots | Conversational AI",
   description: "Advanced chatbots powered by LLMs that engage users in natural conversation. Not just Q&A — they understand context and handle complex queries.",
 };
+
+const chatbotsUseCases = [
+  {
+    icon: "🌐",
+    title: "Website Visitor Engagement",
+    titleNl: "Website Bezoeker Betrokkenheid",
+    description: "Greet visitors, qualify leads, and answer questions in real-time before they leave your site.",
+    descriptionNl: "Begroet bezoekers, kwalificeer leads en beantwoord vragen in real-time voordat ze je site verlaten.",
+  },
+  {
+    icon: "❓",
+    title: "FAQ Handling",
+    titleNl: "FAQ Afhandeling",
+    description: "Instantly answer frequently asked questions while maintaining a natural, helpful tone.",
+    descriptionNl: "Beantwoord veelgestelde vragen direct terwijl je een natuurlijke, behulpzame toon behoudt.",
+  },
+  {
+    icon: "📅",
+    title: "Booking Assistance",
+    titleNl: "Boeking Assistentie",
+    description: "Help users book appointments, reservations, or meetings directly within the chat interface.",
+    descriptionNl: "Help gebruikers om afspraken, reserveringen of vergaderingen direct te boeken binnen de chatinterface.",
+  },
+  {
+    icon: "🛍️",
+    title: "Product Recommendations",
+    titleNl: "Product Aanbevelingen",
+    description: "Understand user preferences and suggest relevant products or services based on their needs.",
+    descriptionNl: "Begrijp gebruikersvoorkeuren en suggereer relevante producten of diensten op basis van hun behoeften.",
+  },
+  {
+    icon: "👥",
+    title: "Internal Employee Support",
+    titleNl: "Interne Medewerker Ondersteuning",
+    description: "Provide HR, IT, or policy answers to employees instantly through Slack, Teams, or intranet.",
+    descriptionNl: "Geef HR-, IT- of beleidsantwoorden aan medewerkers direct via Slack, Teams of intranet.",
+  },
+  {
+    icon: "🌍",
+    title: "Multi-language Support",
+    titleNl: "Meertalige Ondersteuning",
+    description: "Communicate fluently in multiple languages, breaking down language barriers for global businesses.",
+    descriptionNl: "Communiceer vloeiend in meerdere talen en doorbreek taalbarrières voor wereldwijde bedrijven.",
+  },
+];
 
 export default function ChatbotsPage() {
   return (
@@ -38,6 +84,8 @@ Deze chatbots kunnen complexe vragen verwerken, context behouden over meerdere b
           { text: "Multi-language support", textNl: "Meertalige ondersteuning" },
         ]}
       />
+
+      <UseCases useCases={chatbotsUseCases} />
     </main>
   );
 }

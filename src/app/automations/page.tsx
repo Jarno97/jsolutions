@@ -1,11 +1,57 @@
 import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import WhatIsIt from "@/components/WhatIsIt";
+import UseCases from "@/components/UseCases";
 
 export const metadata: Metadata = {
   title: "Automations | Smart Business Processes",
   description: "Custom automation pipelines that connect your tools and streamline processes. From simple triggers to complex workflows — we build systems that run themselves.",
 };
+
+const automationsUseCases = [
+  {
+    icon: "🧾",
+    title: "Invoice Processing",
+    titleNl: "Factuurverwerking",
+    description: "Automatically extract data from incoming invoices and enter them into your accounting system.",
+    descriptionNl: "Haal automatisch data uit binnenkomende facturen en voer ze in je boekhoudsysteem in.",
+  },
+  {
+    icon: "📧",
+    title: "Email Parsing & Routing",
+    titleNl: "Email Parsing & Routering",
+    description: "Extract key information from emails and automatically forward them to the right person or team.",
+    descriptionNl: "Haal belangrijke informatie uit e-mails en stuur ze automatisch door naar de juiste persoon of team.",
+  },
+  {
+    icon: "🔄",
+    title: "Data Synchronization",
+    titleNl: "Data Synchronisatie",
+    description: "Keep data in sync across multiple platforms automatically — CRM, spreadsheets, databases, and more.",
+    descriptionNl: "Houd data automatisch gesynchroniseerd over meerdere platforms — CRM, spreadsheets, databases en meer.",
+  },
+  {
+    icon: "📈",
+    title: "Report Generation",
+    titleNl: "Rapportage Generatie",
+    description: "Automatically compile data from various sources into formatted reports and send them on schedule.",
+    descriptionNl: "Compileer automatisch data uit verschillende bronnen in geformatteerde rapporten en stuur ze volgens schema.",
+  },
+  {
+    icon: "📱",
+    title: "Social Media Posting",
+    titleNl: "Social Media Posten",
+    description: "Schedule and publish posts across multiple social media platforms from a single dashboard.",
+    descriptionNl: "Plan en publiceer berichten op meerdere social media platforms vanuit één dashboard.",
+  },
+  {
+    icon: "🔗",
+    title: "CRM Updates",
+    titleNl: "CRM Updates",
+    description: "Automatically update customer records, track interactions, and trigger follow-up actions.",
+    descriptionNl: "Werk automatisch klantrecords bij, volg interacties en trigger follow-up acties.",
+  },
+];
 
 export default function AutomationsPage() {
   return (
@@ -38,6 +84,8 @@ We bouwen aangepaste automatisering pipelines die je bestaande tools verbinden �
           { text: "Detailed activity logs", textNl: "Gedetailleerde activiteitenlogboeken" },
         ]}
       />
+
+      <UseCases useCases={automationsUseCases} />
     </main>
   );
 }

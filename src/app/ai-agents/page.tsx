@@ -1,11 +1,57 @@
 import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import WhatIsIt from "@/components/WhatIsIt";
+import UseCases from "@/components/UseCases";
 
 export const metadata: Metadata = {
   title: "AI Agents | Intelligent Automation",
   description: "Autonomous AI agents that work 24/7 to handle complex tasks. From customer support to data processing — agents that learn and adapt to your workflows.",
 };
+
+const aiAgentsUseCases = [
+  {
+    icon: "🎧",
+    title: "Customer Support Triage",
+    titleNl: "Klantenservice Triagem",
+    description: "Automatically categorize and route incoming support tickets to the right team or resolve common issues autonomously.",
+    descriptionNl: "Categoriseer en router automatisch inkomende support tickets naar het juiste team of los veelvoorkomende problemen autonoom op.",
+  },
+  {
+    icon: "📊",
+    title: "Data Entry & Processing",
+    titleNl: "Data-invoer & Verwerking",
+    description: "Extract information from documents, forms, or emails and automatically populate your databases or CRM.",
+    descriptionNl: "Haal informatie uit documenten, formulieren of e-mails en vul automatisch je databases of CRM in.",
+  },
+  {
+    icon: "📅",
+    title: "Schedule Management",
+    titleNl: "Agenda Beheer",
+    description: "Coordinate meetings, manage calendars, and handle scheduling conflicts without human intervention.",
+    descriptionNl: "Coördineer vergaderingen, beheer agendas en los planningconflicten op zonder menselijke tussenkomst.",
+  },
+  {
+    icon: "🎯",
+    title: "Lead Qualification",
+    titleNl: "Lead Kwalificatie",
+    description: "Score and qualify leads based on behavior, demographics, and engagement to prioritize sales efforts.",
+    descriptionNl: "Score en kwalificeer leads op basis van gedrag, demografie en betrokkenheid om verkoopinspanningen te prioriteren.",
+  },
+  {
+    icon: "📄",
+    title: "Document Review",
+    titleNl: "Document Review",
+    description: "Analyze contracts, proposals, or legal documents for key terms, risks, and compliance requirements.",
+    descriptionNl: "Analyseer contracten, voorstellen of juridische documenten op belangrijke voorwaarden, risico's en compliance-vereisten.",
+  },
+  {
+    icon: "📦",
+    title: "Inventory Management",
+    titleNl: "Voorraadbeheer",
+    description: "Monitor stock levels, predict reordering needs, and automate purchase orders when inventory runs low.",
+    descriptionNl: "Monitor voorraadniveaus, voorspel nabestellingen en automatiseer inkooporders wanneer voorraad laag is.",
+  },
+];
 
 export default function AIAgentsPage() {
   return (
@@ -38,6 +84,8 @@ Ze integreren met je bestaande tools en systemen en leren van data en interactie
           { text: "Works 24/7 without breaks", textNl: "Werkt 24/7 zonder pauzes" },
         ]}
       />
+
+      <UseCases useCases={aiAgentsUseCases} />
     </main>
   );
 }
