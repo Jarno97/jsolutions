@@ -27,11 +27,11 @@ const testimonials: Testimonial[] = [
     roleNl: "Finance Director, Administratiekantoor",
   },
   {
-    quote: "Clear communication, fast delivery, and results that speak for themselves.",
+    quote: "Incredibly fast and professional service. Automation that saves me hours every week.",
     quoteNl: "Erg snelle en professionele service. Automatisering die me uren scheelt per week.",
-    author: "Bob Wilson",
-    role: "Founder, Startup",
-    roleNl: "Founder, Startup",
+    author: "Britt van Gennip",
+    role: "Owner, Voet Verzorgd bij Britt",
+    roleNl: "Eigenaar, Voet Verzorgd bij Britt",
   },
 ];
 
