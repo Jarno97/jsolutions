@@ -41,7 +41,7 @@ const automationsUseCases = [
   {
     icon: "📱",
     title: "Social Media Posting",
-    titlenl: "Social Media Posten",
+    titleNl: "Social Media Posten",
     description: "Schedule and publish posts across multiple social media platforms from a single dashboard.",
     descriptionNl: "Plan en publiceer berichten op meerdere social media platforms vanuit één dashboard.",
   },
