@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import WhatIsIt from "@/components/WhatIsIt";
 import UseCases from "@/components/UseCases";
+import CaseStudy from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
   title: "Chatbots | Conversational AI",
@@ -53,6 +54,26 @@ const chatbotsUseCases = [
   },
 ];
 
+const chatbotsCaseStudy = {
+  client: "International DTC Fashion Brand",
+  industry: "Fashion E-commerce",
+  size: "~80 employees",
+  challenge: "70% of support chats were repetitive pre-purchase questions. High cart abandonment due to unanswered product inquiries. Limited after-hours support coverage. Slow response times during seasonal traffic spikes. Manual lead capture for wholesale inquiries. The support team was overwhelmed during campaigns and product launches.",
+  challengeNl: "70% van de support chats waren repetitieve vragen voor aankoop. Hoge winkelwagen abandon door onbeantwoorde productvragen. Beperkte ondersteuning buiten kantooruren. Trage reactietijden tijdens seizoensgebonden verkeerspieken. Handmatige lead capture voor wholesale inquiries. Het support team was overweldigd tijdens campagnes en productlanceringen.",
+  solution: "We deployed an advanced conversational AI chatbot powered by a large language model integrated with Shopify, Zendesk, and Klaviyo. Core capabilities: Website Visitor Engagement, Context-Aware FAQ, Product Recommendations, Seamless Human Handoff, and Multi-Language Support. Implementation took 4 weeks with no additional support hires required.",
+  solutionNl: "We implementeerden een geavanceerde conversationele AI chatbot aangedreven door een large language model geïntegreerd met Shopify, Zendesk en Klaviyo. Kerncapaciteiten: Website Bezoeker Betrokkenheid, Context-Bewuste FAQ, Product Aanbevelingen, Naadloze Overdracht aan Mens, en Meertalige Ondersteuning. Implementatie duurde 4 weken zonder extra support medewerkers.",
+  results: [
+    { label: "Chats resolved", labelNl: "Chats opgelost", value: "64%" },
+    { label: "Response time ↓", labelNl: "Reactietijd ↓", value: "38%" },
+    { label: "Cart abandonment ↓", labelNl: "Winkelwagen abandon ↓", value: "22%" },
+    { label: "AOV increase", labelNl: "AOV toename", value: "17%" },
+    { label: "Coverage", labelNl: "Dekking", value: "24/7" },
+    { label: "Peak volume", labelNl: "Piek volume", value: "3×" },
+  ],
+  impact: "Instead of acting as a scripted FAQ bot, the chatbot functioned as a scalable digital sales and support assistant. It understood natural language and context, guided users toward purchase decisions, reduced pressure on human agents, and delivered consistent, on-brand communication. The company transformed live chat from a cost center into a revenue-generating channel while improving customer experience globally.",
+  impactNl: "In plaats van te fungeren als een scriptmatige FAQ bot, functioneerde de chatbot als een schaalbare digitale verkoop- en support assistent. Het begreep natuurlijke taal en context, leidde gebruikers naar aankoopbeslissingen, verminderde druk op menselijke agents en leverde consistente, merkspecifieke communicatie. Het bedrijf transformeerde live chat van een kostenpost naar een omzet genererend kanaal terwijl het de klantbeleving wereldwijd verbeterde.",
+};
+
 export default function ChatbotsPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-charcoal">
@@ -86,6 +107,8 @@ Deze chatbots kunnen complexe vragen verwerken, context behouden over meerdere b
       />
 
       <UseCases useCases={chatbotsUseCases} />
+
+      <CaseStudy {...chatbotsCaseStudy} />
     </main>
   );
 }
