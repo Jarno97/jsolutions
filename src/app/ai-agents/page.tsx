@@ -3,6 +3,8 @@ import ServiceHero from "@/components/ServiceHero";
 import WhatIsIt from "@/components/WhatIsIt";
 import UseCases from "@/components/UseCases";
 import CaseStudy from "@/components/CaseStudy";
+import RelatedServices from "@/components/RelatedServices";
+import ServiceCTA from "@/components/ServiceCTA";
 
 export const metadata: Metadata = {
   title: "AI Agents | Intelligent Automation",
@@ -109,6 +111,10 @@ Ze integreren met je bestaande tools en systemen en leren van data en interactie
       <UseCases useCases={aiAgentsUseCases} />
 
       <CaseStudy {...aiAgentsCaseStudy} />
+
+      <RelatedServices currentService="ai-agents" />
+
+      <ServiceCTA />
     </main>
   );
 }

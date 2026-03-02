@@ -3,6 +3,8 @@ import ServiceHero from "@/components/ServiceHero";
 import WhatIsIt from "@/components/WhatIsIt";
 import UseCases from "@/components/UseCases";
 import CaseStudy from "@/components/CaseStudy";
+import RelatedServices from "@/components/RelatedServices";
+import ServiceCTA from "@/components/ServiceCTA";
 
 export const metadata: Metadata = {
   title: "Chatbots | Conversational AI",
@@ -109,6 +111,10 @@ Deze chatbots kunnen complexe vragen verwerken, context behouden over meerdere b
       <UseCases useCases={chatbotsUseCases} />
 
       <CaseStudy {...chatbotsCaseStudy} />
+
+      <RelatedServices currentService="chatbots" />
+
+      <ServiceCTA />
     </main>
   );
 }

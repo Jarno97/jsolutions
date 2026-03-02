@@ -3,6 +3,8 @@ import ServiceHero from "@/components/ServiceHero";
 import WhatIsIt from "@/components/WhatIsIt";
 import UseCases from "@/components/UseCases";
 import CaseStudy from "@/components/CaseStudy";
+import RelatedServices from "@/components/RelatedServices";
+import ServiceCTA from "@/components/ServiceCTA";
 
 export const metadata: Metadata = {
   title: "Automations | Smart Business Processes",
@@ -109,6 +111,10 @@ We bouwen aangepaste automatisering pipelines die je bestaande tools verbinden â
       <UseCases useCases={automationsUseCases} />
 
       <CaseStudy {...automationsCaseStudy} />
+
+      <RelatedServices currentService="automations" />
+
+      <ServiceCTA />
     </main>
   );
 }
