@@ -5,10 +5,30 @@ import UseCases from "@/components/UseCases";
 import CaseStudy from "@/components/CaseStudy";
 import RelatedServices from "@/components/RelatedServices";
 import ServiceCTA from "@/components/ServiceCTA";
+import ServiceSchema from "@/components/ServiceSchema";
 
 export const metadata: Metadata = {
-  title: "Chatbots | Conversational AI",
-  description: "Advanced chatbots powered by LLMs that engage users in natural conversation. Not just Q&A — they understand context and handle complex queries.",
+  title: "Chatbots | Conversational AI for Business",
+  description: "Build intelligent chatbots powered by large language models. Understand context, handle complex queries, and engage customers 24/7 across your website and channels.",
+  keywords: ["chatbots", "conversational AI", "AI chatbot", "customer service chatbot", "LLM chatbot", "website chatbot", "AI support", "virtual assistant", "Netherlands", "Dutch AI developer"],
+  openGraph: {
+    title: "Chatbots | Conversational AI for Business",
+    description: "Build intelligent chatbots powered by large language models. Understand context, handle complex queries, and engage customers 24/7.",
+    url: "https://jsolutions.nl/chatbots",
+    siteName: "JSolutions",
+    locale: "en_US",
+    alternateLocale: "nl_NL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chatbots | Conversational AI for Business",
+    description: "Build intelligent chatbots powered by large language models. Understand context and engage customers 24/7.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const chatbotsUseCases = [
@@ -79,6 +99,7 @@ const chatbotsCaseStudy = {
 export default function ChatbotsPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-charcoal">
+      <ServiceSchema service="chatbots" />
       <ServiceHero
         title="Conversational AI that actually understands"
         titleNl="Conversationele AI die echt begrijpt"

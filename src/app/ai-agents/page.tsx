@@ -5,10 +5,30 @@ import UseCases from "@/components/UseCases";
 import CaseStudy from "@/components/CaseStudy";
 import RelatedServices from "@/components/RelatedServices";
 import ServiceCTA from "@/components/ServiceCTA";
+import ServiceSchema from "@/components/ServiceSchema";
 
 export const metadata: Metadata = {
-  title: "AI Agents | Intelligent Automation",
-  description: "Autonomous AI agents that work 24/7 to handle complex tasks. From customer support to data processing — agents that learn and adapt to your workflows.",
+  title: "AI Agents | Autonomous Systems That Work 24/7",
+  description: "Deploy intelligent AI agents that handle customer support, data processing, lead qualification, and more. Scale your operations without hiring more staff.",
+  keywords: ["AI agents", "artificial intelligence", "automation", "autonomous agents", "AI customer support", "lead qualification", "business automation", "AI for business", "Netherlands", "Dutch AI developer"],
+  openGraph: {
+    title: "AI Agents | Autonomous Systems That Work 24/7",
+    description: "Deploy intelligent AI agents that handle customer support, data processing, lead qualification, and more. Scale your operations without hiring more staff.",
+    url: "https://jsolutions.nl/ai-agents",
+    siteName: "JSolutions",
+    locale: "en_US",
+    alternateLocale: "nl_NL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Agents | Autonomous Systems That Work 24/7",
+    description: "Deploy intelligent AI agents that handle customer support, data processing, lead qualification, and more.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const aiAgentsUseCases = [
@@ -79,6 +99,7 @@ const aiAgentsCaseStudy = {
 export default function AIAgentsPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-charcoal">
+      <ServiceSchema service="ai-agents" />
       <ServiceHero
         title="Intelligent AI Agents that work 24/7"
         titleNl="Intelligente AI Agents die 24/7 werken"

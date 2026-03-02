@@ -5,10 +5,30 @@ import UseCases from "@/components/UseCases";
 import CaseStudy from "@/components/CaseStudy";
 import RelatedServices from "@/components/RelatedServices";
 import ServiceCTA from "@/components/ServiceCTA";
+import ServiceSchema from "@/components/ServiceSchema";
 
 export const metadata: Metadata = {
-  title: "Automations | Smart Business Processes",
-  description: "Custom automation pipelines that connect your tools and streamline processes. From simple triggers to complex workflows — we build systems that run themselves.",
+  title: "Automations | Smart Business Process Automation",
+  description: "Eliminate repetitive tasks with custom automation pipelines. Connect your tools, streamline workflows, and save hours every week with smart business automation.",
+  keywords: ["automation", "business automation", "workflow automation", "process automation", "Make.com alternatives", "Zapier alternatives", "no-code automation", "automate business processes", "Netherlands", "Dutch automation developer"],
+  openGraph: {
+    title: "Automations | Smart Business Process Automation",
+    description: "Eliminate repetitive tasks with custom automation pipelines. Connect your tools, streamline workflows, and save hours every week.",
+    url: "https://jsolutions.nl/automations",
+    siteName: "JSolutions",
+    locale: "en_US",
+    alternateLocale: "nl_NL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Automations | Smart Business Process Automation",
+    description: "Eliminate repetitive tasks with custom automation pipelines. Connect your tools and save hours every week.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const automationsUseCases = [
@@ -79,6 +99,7 @@ const automationsCaseStudy = {
 export default function AutomationsPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-charcoal">
+      <ServiceSchema service="automations" />
       <ServiceHero
         title="Eliminate repetitive tasks with smart automations"
         titleNl="Elimineer repetitieve taken met slimme automatisering"
