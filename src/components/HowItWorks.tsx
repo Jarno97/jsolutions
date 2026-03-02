@@ -72,20 +72,17 @@ export default function HowItWorks() {
                   </span>
 
                   {/* Content */}
-                  <div className="relative">
-                    <div className="w-10 h-10 rounded-full bg-lime flex items-center justify-center mb-5 text-charcoal font-bold font-mono text-sm">
-                      {step.number}
+                  <div className="relative pt-8">
+                    <div className="absolute -top-0 left-4 px-3 py-1 bg-charcoal dark:bg-white rounded text-xs font-medium text-white dark:text-charcoal font-mono">
+                      {t(step.duration, step.durationNl)}
                     </div>
                     
                     <h3 className="text-lg font-bold text-charcoal dark:text-white mb-3 font-mono">
                       {t(step.title, step.titleNl)}
                     </h3>
-                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-5 text-sm">
+                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm">
                       {t(step.description, step.descriptionNl)}
                     </p>
-                    <div className="inline-block px-3 py-1.5 bg-charcoal dark:bg-white rounded text-xs font-medium text-white dark:text-charcoal font-mono">
-                      {t(step.duration, step.durationNl)}
-                    </div>
                   </div>
                 </div>
               </FadeIn>
