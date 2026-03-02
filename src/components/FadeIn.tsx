@@ -2,13 +2,23 @@
 
 import { useEffect, useRef, useState, ReactNode } from "react";
 
+type AnimationType = "up" | "down" | "left" | "right" | "scale";
+
 interface FadeInProps {
   children: ReactNode;
   delay?: number;
   className?: string;
+  direction?: AnimationType;
+  threshold?: number;
 }
 
-export default function FadeIn({ children, delay = 0, className = "" }: FadeInProps) {
+export default function FadeIn({ 
+  children, 
+  delay = 0, 
+  className = "", 
+  direction = "up",
+  threshold = 0.1
+}: FadeInProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -20,7 +30,7 @@ export default function FadeIn({ children, delay = 0, className = "" }: FadeInPr
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold }
     );
 
     if (ref.current) {
@@ -28,12 +38,29 @@ export default function FadeIn({ children, delay = 0, className = "" }: FadeInPr
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [threshold]);
+
+  const getAnimationClass = () => {
+    if (!isVisible) return "opacity-0";
+    
+    switch (direction) {
+      case "down":
+        return "animate-fade-in-down";
+      case "left":
+        return "animate-fade-in-left";
+      case "right":
+        return "animate-fade-in-right";
+      case "scale":
+        return "animate-fade-in-scale";
+      default:
+        return "animate-fade-in-up";
+    }
+  };
 
   return (
     <div
       ref={ref}
-      className={`${isVisible ? "animate-fade-in-up" : "opacity-0"} ${className}`}
+      className={`${getAnimationClass()} ${className}`}
       style={{ animationDelay: `${delay}ms` }}
     >
       {children}

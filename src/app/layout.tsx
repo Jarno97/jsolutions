@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, DM_Sans } from "next/font/google";
 import { LanguageProvider } from "@/components/LanguageContext";
 import { Analytics } from "@vercel/analytics/next";
+import PageLoader from "@/components/PageLoader";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -116,6 +117,7 @@ export default function RootLayout({
       <body
         className={`${jetbrainsMono.variable} ${dmSans.variable} antialiased`}
       >
+        <PageLoader />
         <Analytics />
         <LanguageProvider>
           {children}
