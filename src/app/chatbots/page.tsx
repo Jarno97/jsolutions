@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Chatbots | Conversational AI for Business",
     description: "Build intelligent chatbots powered by large language models. Understand context, handle complex queries, and engage customers 24/7.",
-    url: "https://jsolutions.nl/chatbots",
+    url: "https://j-solutions.nl/chatbots",
     siteName: "JSolutions",
     locale: "en_US",
     alternateLocale: "nl_NL",

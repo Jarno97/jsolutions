@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Agents | Autonomous Systems That Work 24/7",
     description: "Deploy intelligent AI agents that handle customer support, data processing, lead qualification, and more. Scale your operations without hiring more staff.",
-    url: "https://jsolutions.nl/ai-agents",
+    url: "https://j-solutions.nl/ai-agents",
     siteName: "JSolutions",
     locale: "en_US",
     alternateLocale: "nl_NL",

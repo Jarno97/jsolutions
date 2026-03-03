@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jsolutions.nl"),
+  metadataBase: new URL("https://j-solutions.nl"),
   title: {
     default: "JSolutions | AI Agents & Automations",
     template: "%s | JSolutions",
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JSolutions | AI Agents & Automations",
     description: "AI agents, automations & chatbots that handle the repetitive stuff so you can focus on what matters.",
-    url: "https://jsolutions.nl",
+    url: "https://j-solutions.nl",
     siteName: "JSolutions",
     locale: "en_US",
     alternateLocale: "nl_NL",
     type: "website",
     images: [
       {
-        url: "https://jsolutions.nl/opengraph-image",
+        url: "https://j-solutions.nl/opengraph-image",
         width: 1200,
         height: 630,
         alt: "JSolutions - AI Agents, Chatbots & Automations",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "JSolutions | AI Agents & Automations",
     description: "AI agents, automations & chatbots that handle the repetitive stuff so you can focus on what matters.",
     creator: "@jarno97",
-    images: ["https://jsolutions.nl/opengraph-image"],
+    images: ["https://j-solutions.nl/opengraph-image"],
   },
   robots: {
     index: true,
@@ -79,7 +79,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="canonical" href="https://jsolutions.nl" />
+        <link rel="canonical" href="https://j-solutions.nl" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -88,7 +88,7 @@ export default function RootLayout({
               "@type": "ProfessionalService",
               "name": "JSolutions",
               "description": "AI agents, automations & chatbots for businesses in the Netherlands",
-              "url": "https://jsolutions.nl",
+              "url": "https://j-solutions.nl",
               "telephone": "+31-6-12345678",
               "email": "hello@jsolutions.nl",
               "address": {

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Automations | Smart Business Process Automation",
     description: "Eliminate repetitive tasks with custom automation pipelines. Connect your tools, streamline workflows, and save hours every week.",
-    url: "https://jsolutions.nl/automations",
+    url: "https://j-solutions.nl/automations",
     siteName: "JSolutions",
     locale: "en_US",
     alternateLocale: "nl_NL",

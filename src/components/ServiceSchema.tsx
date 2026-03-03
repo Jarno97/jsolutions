@@ -16,7 +16,7 @@ export default function ServiceSchema({ service }: ServiceSchemaProps) {
       "provider": {
         "@type": "Organization",
         "name": "JSolutions",
-        "url": "https://jsolutions.nl",
+        "url": "https://j-solutions.nl",
       },
       "serviceType": "AI Agents",
       "areaServed": "Netherlands",
@@ -33,7 +33,7 @@ export default function ServiceSchema({ service }: ServiceSchemaProps) {
       "provider": {
         "@type": "Organization",
         "name": "JSolutions",
-        "url": "https://jsolutions.nl",
+        "url": "https://j-solutions.nl",
       },
       "serviceType": "Chatbots",
       "areaServed": "Netherlands",
@@ -50,7 +50,7 @@ export default function ServiceSchema({ service }: ServiceSchemaProps) {
       "provider": {
         "@type": "Organization",
         "name": "JSolutions",
-        "url": "https://jsolutions.nl",
+        "url": "https://j-solutions.nl",
       },
       "serviceType": "Business Automation",
       "areaServed": "Netherlands",
