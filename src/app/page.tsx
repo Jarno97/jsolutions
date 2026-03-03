@@ -192,7 +192,7 @@ export default function Home() {
                 {t("Strategic thinking. Clean execution. Clear communication.", "Strategisch denken. Schone uitvoering. Duidelijke communicatie.")}
               </p>
               <p>
-                {t("Let's build smarter operations.", "Laten we slimmere operaties bouwen.")}
+                {t("Let's build smarter operations.", "Laten we samen jouw bedrijfsprocessen versnellen.")}
               </p>
             </div>
             <a
