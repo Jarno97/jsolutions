@@ -33,6 +33,13 @@ const testimonials: Testimonial[] = [
     role: "Owner, Voet Verzorgd bij Britt",
     roleNl: "Eigenaar, Voet Verzorgd bij Britt",
   },
+  {
+    quote: "With the AI solution from JSolutions, our marketing visuals are produced fully automatically.",
+    quoteNl: "Met de AI-oplossing van JSolutions worden onze marketingvisuals volledig automatisch geproduceerd.",
+    author: "Ted",
+    role: "Owner, Sported Mierlo",
+    roleNl: "Eigenaar, Sported Mierlo",
+  },
 ];
 
 export default function Testimonials() {
