@@ -41,12 +41,21 @@ export const metadata: Metadata = {
     locale: "en_US",
     alternateLocale: "nl_NL",
     type: "website",
+    images: [
+      {
+        url: "https://jsolutions.nl/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "JSolutions - AI Agents, Chatbots & Automations",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "JSolutions | AI Agents & Automations",
     description: "AI agents, automations & chatbots that handle the repetitive stuff so you can focus on what matters.",
     creator: "@jarno97",
+    images: ["https://jsolutions.nl/opengraph-image"],
   },
   robots: {
     index: true,
