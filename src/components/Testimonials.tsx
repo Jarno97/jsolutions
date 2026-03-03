@@ -13,13 +13,6 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "Jarno transformed how we handle customer inquiries. The AI support agent handles 80% of questions instantly.",
-    quoteNl: "Jarno heeft onze klantvragen getransformeerd. De AI support agent beantwoordt 80% van de vragen direct.",
-    author: "John Doe",
-    role: "CEO, Tech Company",
-    roleNl: "CEO, Tech Bedrijf",
-  },
-  {
     quote: "Our invoice processing went from 5 hours to 2 minutes. The ROI was immediate.",
     quoteNl: "Onze factuurverwerking ging van 5 uur naar 2 minuten. De ROI was direct voelbaar.",
     author: "Jane Smith",
