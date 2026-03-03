@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 import ThemeToggle from "@/components/ThemeToggle";
 import Projects from "@/components/Projects";
@@ -46,6 +47,7 @@ const services = [
 
 export default function Home() {
   const { t } = useLanguage();
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-white dark:bg-charcoal font-sans">
@@ -56,13 +58,46 @@ export default function Home() {
             JSolutions<span className="text-lime">.</span>
           </a>
           {/* Desktop nav */}
-          <div className="hidden md:flex gap-6 items-center">
+          <div className="hidden md:flex gap-5 items-center">
             <a href="#about" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono">
               {t("About", "Over")}
             </a>
-            <a href="#services" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono">
-              {t("Services", "Diensten")}
-            </a>
+            
+            {/* Services Dropdown */}
+            <div className="relative">
+              <button 
+                onClick={() => setServicesOpen(!servicesOpen)}
+                onMouseEnter={() => setServicesOpen(true)}
+                className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono flex items-center gap-1"
+              >
+                {t("Services", "Diensten")}
+                <svg className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {servicesOpen && (
+                <div 
+                  onMouseLeave={() => setServicesOpen(false)}
+                  className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-charcoal rounded-xl shadow-lg border border-zinc-200 dark:border-zinc-700 py-2 z-50"
+                >
+                  <Link href="/ai-agents" className="block px-4 py-2.5 text-sm text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:text-charcoal dark:hover:text-lime font-mono">
+                    🤖 {t("AI Agents", "AI Agents")}
+                  </Link>
+                  <Link href="/chatbots" className="block px-4 py-2.5 text-sm text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:text-charcoal dark:hover:text-lime font-mono">
+                    💬 {t("Chatbots", "Chatbots")}
+                  </Link>
+                  <Link href="/automations" className="block px-4 py-2.5 text-sm text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:text-charcoal dark:hover:text-lime font-mono">
+                    ⚡ {t("Automations", "Automatisering")}
+                  </Link>
+                  <hr className="my-2 border-zinc-200 dark:border-zinc-700" />
+                  <a href="#services" className="block px-4 py-2.5 text-sm text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:text-charcoal dark:hover:text-lime font-mono">
+                    {t("View all services →", "Alle diensten →")}
+                  </a>
+                </div>
+              )}
+            </div>
+
             <a href="#how-it-works" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-charcoal dark:hover:text-lime transition-colors font-mono">
               {t("How it works", "Hoe het werkt")}
             </a>
